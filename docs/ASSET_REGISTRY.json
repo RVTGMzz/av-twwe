@@ -104,6 +104,20 @@
       ],
       "task": "ART-003-G02",
       "notes": "Extracted from approved V3 board by image processing (extract_board.py). 16/16 technical PASS. Female ponytail side still wrong in S/SW/N/NE; needs pixel clean-up before GATE 03."
+    },
+    {
+      "id": "trainer.direction_master.v1",
+      "path": "assets/concepts/trainer-gate02/",
+      "storage_status": "in_repo",
+      "review_status": "candidate_pending_owner_review",
+      "format": "png",
+      "count": 16,
+      "dimensions": [
+        64,
+        96
+      ],
+      "task": "ART-003-G02",
+      "notes": "Codex clean-up of the approved draft (3 rounds, reviewed by Claude Code). 16/16 TECH-PASS. Male: clean. Female S/W/NW/E/SE clean; ponytail on her right side in all 8. Female N and NE show fragmented bow/hair pixels and SW a small dark notch on the top hair; needs owner decision."
     }
   ]
 }

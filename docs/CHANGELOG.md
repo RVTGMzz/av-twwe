@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 009 — GATE 02 clean-up candidate (2026-11-25)
+- Codex clean-up of 16 direction sprites (ponytail side fixed, details sharpened), 16/16 TECH-PASS, pending owner review; known: female N/NE fragmented bow pixels, SW notch.
+
 ## Checkpoint 008 — GATE 02 draft extract (2026-11-25)
 - 16 draft 64x96 direction sprites extracted from the approved V3 board (processing only), 16/16 technical PASS, 1x/4x previews. Pending owner review; female ponytail fix outstanding.
 
