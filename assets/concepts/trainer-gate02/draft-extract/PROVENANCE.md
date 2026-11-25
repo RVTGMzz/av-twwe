@@ -1,0 +1,5 @@
+# GATE 02 draft-extract — provenance
+- Source: `assets/concepts/trainer-master-v3.webp` (owner-approved final board, SHA-256 b6fbbd9e…be50), the "Trainer Nam/Nữ — 8 Hướng" strips.
+- Made by: Claude Code, 2026-11-25, with `python tools/asset-pipeline/extract_board.py --out assets/concepts/trainer-gate02/draft-extract`.
+- Processing only, no redrawing: flood-fill removal of the light panel background and ground shadow; one uniform scale for all 16 figures (0.601, tallest board figure 153 px → 92 px); box downscale; ≤48-colour median-cut palette per sprite; hard alpha (threshold 140); removal of isolated single pixels; placed on a 64x96 canvas, feet 2 px above the bottom, centred.
+- Status: **DRAFT, not approved.** Technical check: 16/16 TECH-PASS (`check_master.py`). Known defects inherited from the board: the female side ponytail flips in S/SW/N/NE (fix by hand per ART-003-G02, owner chose "fix in sprites"). Downscaling softened some details (male scarf red, goggle lenses, buckles) and needs pixel clean-up. Not yet split into layers.

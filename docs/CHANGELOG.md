@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 008 — GATE 02 draft extract (2026-11-25)
+- 16 draft 64x96 direction sprites extracted from the approved V3 board (processing only), 16/16 technical PASS, 1x/4x previews. Pending owner review; female ponytail fix outstanding.
+
 ## Checkpoint 007 — Final V3 direction reference (2026-11-25)
 - trainer-master-v3.webp replaced by the owner's final 8-direction board (SHA-256 b6fbbd9e…be50). Direction check: male OK, female ponytail side flips. GATE 02 task ART-003-G02 created.
 

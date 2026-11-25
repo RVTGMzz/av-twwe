@@ -90,6 +90,20 @@
       "review_status": "technical_tested",
       "commit": "87452158a7d67cc0c730f69e6d25ccc82305df10",
       "notes": "check_master, lossless WebP converter, layer compositor/packer, offline viewer; prototype rig kept only as contract test."
+    },
+    {
+      "id": "trainer.direction_master.draft_extract",
+      "path": "assets/concepts/trainer-gate02/draft-extract/",
+      "storage_status": "in_repo",
+      "review_status": "draft_pending_owner_review",
+      "format": "png",
+      "count": 16,
+      "dimensions": [
+        64,
+        96
+      ],
+      "task": "ART-003-G02",
+      "notes": "Extracted from approved V3 board by image processing (extract_board.py). 16/16 technical PASS. Female ponytail side still wrong in S/SW/N/NE; needs pixel clean-up before GATE 03."
     }
   ]
 }
