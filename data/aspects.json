@@ -1,0 +1,309 @@
+{
+  "version": "1.0.0",
+  "status": "approved-system_provisional-matchups",
+  "unit": "percent",
+  "neutral_attack_id": "neutral",
+  "defender_aspect_count": [
+    1,
+    2
+  ],
+  "dual_rule": "sum deviations from 100 and clamp to 75..125",
+  "resonance_enabled": false,
+  "aspects": [
+    {
+      "id": "ember",
+      "name": "Ember",
+      "vi": "Nhiệt",
+      "color": "#F08050",
+      "icon_id": "aspect-ember"
+    },
+    {
+      "id": "tide",
+      "name": "Tide",
+      "vi": "Thủy",
+      "color": "#61BBE9",
+      "icon_id": "aspect-tide"
+    },
+    {
+      "id": "grove",
+      "name": "Grove",
+      "vi": "Sinh trưởng",
+      "color": "#95C96B",
+      "icon_id": "aspect-grove"
+    },
+    {
+      "id": "gale",
+      "name": "Gale",
+      "vi": "Phong",
+      "color": "#75D6BC",
+      "icon_id": "aspect-gale"
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "vi": "Thạch",
+      "color": "#C4A37D",
+      "icon_id": "aspect-stone"
+    },
+    {
+      "id": "spark",
+      "name": "Spark",
+      "vi": "Điện",
+      "color": "#F0CF60",
+      "icon_id": "aspect-spark"
+    },
+    {
+      "id": "frost",
+      "name": "Frost",
+      "vi": "Băng",
+      "color": "#A3DEF5",
+      "icon_id": "aspect-frost"
+    },
+    {
+      "id": "alloy",
+      "name": "Alloy",
+      "vi": "Kim loại",
+      "color": "#B6C5D0",
+      "icon_id": "aspect-alloy"
+    },
+    {
+      "id": "lumen",
+      "name": "Lumen",
+      "vi": "Quang",
+      "color": "#F4D994",
+      "icon_id": "aspect-lumen"
+    },
+    {
+      "id": "veil",
+      "name": "Veil",
+      "vi": "Hư ảnh",
+      "color": "#B59BE8",
+      "icon_id": "aspect-veil"
+    },
+    {
+      "id": "echo",
+      "name": "Echo",
+      "vi": "Cộng hưởng",
+      "color": "#E1A0D0",
+      "icon_id": "aspect-echo"
+    },
+    {
+      "id": "aether",
+      "name": "Aether",
+      "vi": "Hư không",
+      "color": "#879EFA",
+      "icon_id": "aspect-aether"
+    }
+  ],
+  "matrix": {
+    "ember": {
+      "ember": 100,
+      "tide": 75,
+      "grove": 125,
+      "gale": 75,
+      "stone": 100,
+      "spark": 100,
+      "frost": 125,
+      "alloy": 100,
+      "lumen": 100,
+      "veil": 100,
+      "echo": 100,
+      "aether": 100
+    },
+    "tide": {
+      "ember": 125,
+      "tide": 100,
+      "grove": 75,
+      "gale": 100,
+      "stone": 125,
+      "spark": 75,
+      "frost": 100,
+      "alloy": 100,
+      "lumen": 100,
+      "veil": 100,
+      "echo": 100,
+      "aether": 100
+    },
+    "grove": {
+      "ember": 75,
+      "tide": 125,
+      "grove": 100,
+      "gale": 100,
+      "stone": 100,
+      "spark": 100,
+      "frost": 75,
+      "alloy": 100,
+      "lumen": 100,
+      "veil": 100,
+      "echo": 125,
+      "aether": 100
+    },
+    "gale": {
+      "ember": 125,
+      "tide": 100,
+      "grove": 100,
+      "gale": 100,
+      "stone": 75,
+      "spark": 100,
+      "frost": 100,
+      "alloy": 100,
+      "lumen": 100,
+      "veil": 125,
+      "echo": 100,
+      "aether": 75
+    },
+    "stone": {
+      "ember": 100,
+      "tide": 75,
+      "grove": 100,
+      "gale": 125,
+      "stone": 100,
+      "spark": 125,
+      "frost": 100,
+      "alloy": 75,
+      "lumen": 100,
+      "veil": 100,
+      "echo": 100,
+      "aether": 100
+    },
+    "spark": {
+      "ember": 100,
+      "tide": 125,
+      "grove": 100,
+      "gale": 100,
+      "stone": 75,
+      "spark": 100,
+      "frost": 100,
+      "alloy": 125,
+      "lumen": 75,
+      "veil": 100,
+      "echo": 100,
+      "aether": 100
+    },
+    "frost": {
+      "ember": 75,
+      "tide": 100,
+      "grove": 125,
+      "gale": 100,
+      "stone": 100,
+      "spark": 100,
+      "frost": 100,
+      "alloy": 75,
+      "lumen": 100,
+      "veil": 100,
+      "echo": 100,
+      "aether": 125
+    },
+    "alloy": {
+      "ember": 100,
+      "tide": 100,
+      "grove": 100,
+      "gale": 100,
+      "stone": 125,
+      "spark": 75,
+      "frost": 125,
+      "alloy": 100,
+      "lumen": 100,
+      "veil": 100,
+      "echo": 75,
+      "aether": 100
+    },
+    "lumen": {
+      "ember": 100,
+      "tide": 100,
+      "grove": 100,
+      "gale": 100,
+      "stone": 100,
+      "spark": 125,
+      "frost": 100,
+      "alloy": 100,
+      "lumen": 100,
+      "veil": 125,
+      "echo": 75,
+      "aether": 75
+    },
+    "veil": {
+      "ember": 100,
+      "tide": 100,
+      "grove": 100,
+      "gale": 75,
+      "stone": 100,
+      "spark": 100,
+      "frost": 100,
+      "alloy": 100,
+      "lumen": 75,
+      "veil": 100,
+      "echo": 125,
+      "aether": 125
+    },
+    "echo": {
+      "ember": 100,
+      "tide": 100,
+      "grove": 75,
+      "gale": 100,
+      "stone": 100,
+      "spark": 100,
+      "frost": 100,
+      "alloy": 125,
+      "lumen": 125,
+      "veil": 75,
+      "echo": 100,
+      "aether": 100
+    },
+    "aether": {
+      "ember": 100,
+      "tide": 100,
+      "grove": 100,
+      "gale": 125,
+      "stone": 100,
+      "spark": 100,
+      "frost": 75,
+      "alloy": 100,
+      "lumen": 125,
+      "veil": 75,
+      "echo": 100,
+      "aether": 100
+    }
+  },
+  "prototype_kin": [
+    {
+      "id": "pebblit",
+      "aspects": [
+        "stone",
+        "grove"
+      ]
+    },
+    {
+      "id": "kettli",
+      "aspects": [
+        "ember",
+        "tide"
+      ]
+    },
+    {
+      "id": "broomble",
+      "aspects": [
+        "gale"
+      ]
+    },
+    {
+      "id": "crumbula",
+      "aspects": [
+        "veil"
+      ]
+    },
+    {
+      "id": "sproutail",
+      "aspects": [
+        "grove"
+      ]
+    },
+    {
+      "id": "slimeberry",
+      "aspects": [
+        "tide",
+        "grove"
+      ]
+    }
+  ]
+}
