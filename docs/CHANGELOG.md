@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 011 — GATE 02 approved, GATE 03 tooling (2026-11-25)
+- Owner approved the GATE 02 direction sprites (D019). Added separate_layers.py (label maps, split, pixel-exact recombination, lossless layer atlases, metadata) and first-pass label maps; label correction is assigned to Codex (ART-003-G03).
+
 ## Checkpoint 010 — GATE 02 female whole-sprite set (2026-11-25)
 - Female sprites regenerated as whole figures (rounds 4–5), with no patch overlap, the ponytail on her right in all 8 directions and NE restyled to match. 16/16 TECH-PASS, pending owner approval.
 
