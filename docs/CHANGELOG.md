@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 007 — Final V3 direction reference (2026-11-25)
+- trainer-master-v3.webp replaced by the owner's final 8-direction board (SHA-256 b6fbbd9e…be50). Direction check: male OK, female ponytail side flips. GATE 02 task ART-003-G02 created.
+
 ## Checkpoint 006 — Trainer Master V3 reference in Git (2026-11-25)
 - assets/concepts/trainer-master-v3.webp imported, SHA-256 verified against ART-003-V3-APPROVAL.md (fed477a). Option A = baseline. GATE 02 images assigned to ChatGPT (no image generation in Claude Code).
 

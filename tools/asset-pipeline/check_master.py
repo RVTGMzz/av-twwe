@@ -13,7 +13,7 @@ import sys
 from PIL import Image, ImageDraw
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-ALLOWED = {(48, 64), (64, 80), (64, 96)}
+ALLOWED = {(48, 64), (64, 80), (64, 96)}  # 64x96 = V3 board recommendation
 MAX_COLOURS = 48
 
 

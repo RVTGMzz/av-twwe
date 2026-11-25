@@ -50,14 +50,14 @@
       "storage_status": "in_repo",
       "review_status": "visual_approved",
       "format": "webp",
-      "bytes": 345188,
-      "sha256": "c4deb5942bbdf913aa669928480f22a14737efe0792b1c020dcd5fef8de1bc18",
+      "bytes": 288542,
+      "sha256": "b6fbbd9efa7d6217354b0f2f577a255be7e80c4d89bd831984c8c0d3fa58be50",
       "dimensions": [
         1536,
         1024
       ],
-      "task": "ART-003-V3-APPROVAL",
-      "notes": "Owner-approved V3 board; Option A recommended baseline. Imported 2026-11-25 from owner chat attachment; SHA-256 verified equal to ART-003-V3-APPROVAL.md. Reference board, not a sprite atlas."
+      "task": "ART-003-G02",
+      "notes": "Final V3 character concept + 8-direction board (owner replacement 2026-11-25). Supersedes c4deb594 (3-option board, ae0636f history). Male directions consistent; female side ponytail flips in S/SW/N/NE (see docs/tasks/ART-003-G02.md). Concept reference, not a sprite atlas."
     },
     {
       "id": "ui.aspect.glyphs.v1",

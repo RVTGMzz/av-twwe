@@ -3,11 +3,11 @@ Checkpoint 005 | 2026-11-25 | Pre-production
 Active branch: **feature/modular-trainer** (read this file on that branch, not main). Last implementation commit: 8745215 (asset pipeline). Handoff/docs commit follows it; use `git log -1` + `git ls-remote origin` for the real head.
 Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/ART-003-G01.md. Full owner requirements: docs/tasks/ART-003-spec.md. ART-003-B01 is ON HOLD.
 
-## Update 2026-11-25 — Trainer Master V3 approved (fed477a, docs/tasks/ART-003-V3-APPROVAL.md)
-- Owner approved V3 visual direction; Option A = recommended baseline. Active gate is now **GATE 02 Direction Master** (male/female, 8 directions, 1x + 4x preview, owner approval before modular separation).
-- **Reference imported and verified:** `assets/concepts/trainer-master-v3.webp` (1536x1024, 345,188 B, SHA-256 c4deb5942bbdf913aa669928480f22a14737efe0792b1c020dcd5fef8de1bc18 = approval doc). Registry `concept.trainer_master.v3` = in_repo. This is a concept board; its miniature turnaround is illustrative, not a verified 8-direction sprite set.
-- **GATE 02 images:** Claude Code has no image-generation tool, so it cannot draw the 8-direction master at the approved quality. Per owner rule, ChatGPT (image tool) produces the Direction Master; Claude Code/Codex handle import, hash check, `check_master.py`, previews, layer separation, animation and integration. Do not redesign the approved character; do not reuse rejected sprites.
-- Next action: ChatGPT produces the GATE 02 Direction Master from Option A of `assets/concepts/trainer-master-v3.webp` (male + female, S, SW, W, NW, N, NE, E, SE, transparent PNG, same canvas, suggested 64x96 as on the board) into `assets/concepts/trainer-gate02/`. Claude Code then runs `check_master.py` (allow 64x96), builds 1x + 4x previews and waits for owner approval before GATE 03.
+## Update 2026-11-25 — Trainer Master V3 final reference (GATE 02 active)
+- Authoritative reference: `assets/concepts/trainer-master-v3.webp` = final "Character Concept & 8 Directions" board, 1536x1024, 288,542 B, SHA-256 b6fbbd9efa7d6217354b0f2f577a255be7e80c4d89bd831984c8c0d3fa58be50 (verified). Replaces all older trainer references (3-option board c4deb594… only in history at ae0636f). Option A design.
+- Direction check (docs/tasks/ART-003-G02.md): male consistent in all 8 directions; **female side ponytail/bow flips** (S unclear, SW and NE mirrored, N centred). Fix before sprites: tie stays on her right side in every direction; never mirror her hair, bow or straps.
+- Board is concept art, not 64x96 sprites. GATE 02 sprite set (16 PNG, 64x96) is still to be made by ChatGPT or an artist; Claude Code has no image generation. Animation is blocked until the GATE 02 sprites are owner-approved and GATE 03 separation is done.
+- Next action: ChatGPT produces `assets/concepts/trainer-gate02/*` per ART-003-G02 (with the ponytail fix). Then Claude Code runs `check_master.py`, builds 1x + 4x and direction-consistency previews and asks the owner to approve.
 
 ## Owner verdict this session (binding — D016, D017)
 - The procedural trainer sprites Claude Code generated with scripts are **NOT approved artistically** (v1 too chibi/bobblehead; v2 too thin, long and stiff). Do not reuse them as a design base. They are not in Git.
