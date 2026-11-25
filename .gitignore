@@ -1,0 +1,5 @@
+build/
+__pycache__/
+*.pyc
+# generated viewer bundle (run node tools/asset-pipeline/build.mjs)
+tools/asset-pipeline/viewer/data.js

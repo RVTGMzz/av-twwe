@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aevoria Asset Viewer</title>
+<style>
+  :root { --bg:#14161f; --panel:#1d2030; --line:#2e3348; --text:#e6e8f2; --muted:#9aa0bb; --accent:#3fc8e6; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:13px/1.4 system-ui, sans-serif; }
+  header { padding:10px 16px; border-bottom:1px solid var(--line); display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0; }
+  header .status { color:#ffcf6a; font-size:12px; }
+  main { display:grid; grid-template-columns: 300px 1fr; gap:0; min-height: calc(100vh - 44px); }
+  aside { background:var(--panel); border-right:1px solid var(--line); padding:12px 14px; overflow:auto; }
+  fieldset { border:1px solid var(--line); border-radius:6px; margin:0 0 10px; padding:8px 10px; }
+  legend { color:var(--muted); padding:0 4px; }
+  label { display:flex; gap:6px; align-items:center; margin:3px 0; }
+  select, input[type=range] { width:100%; }
+  select { background:#11131b; color:var(--text); border:1px solid var(--line); border-radius:4px; padding:3px; }
+  .dirs { display:grid; grid-template-columns:repeat(3, 1fr); gap:4px; }
+  .dirs button { background:#11131b; color:var(--text); border:1px solid var(--line); border-radius:4px; padding:5px 0; cursor:pointer; }
+  .dirs button.on { border-color:var(--accent); color:var(--accent); }
+  .dirs .c { visibility:hidden; }
+  .layers { display:grid; grid-template-columns:1fr 1fr; }
+  .stage { padding:14px; overflow:auto; }
+  canvas { image-rendering: pixelated; background:#3c5a3a; border:1px solid var(--line); display:block; max-width:100%; }
+  #info { color:var(--muted); margin-top:8px; white-space:pre-wrap; font-family: ui-monospace, monospace; font-size:12px; }
+  .row { display:flex; gap:6px; }
+  .row button { flex:1; background:#11131b; color:var(--text); border:1px solid var(--line); border-radius:4px; padding:4px; cursor:pointer; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } aside { border-right:0; border-bottom:1px solid var(--line); } }
+</style>
+</head>
+<body>
+<header><h1>Aevoria Asset Viewer · ART-003-B01</h1><span class="status" id="status"></span></header>
+<main>
+<aside>
+  <fieldset><legend>Character</legend>
+    <label>Body <select id="preset"></select></label>
+    <label>Skin <select id="skin"></select></label>
+    <label>Hair <select id="hair"></select></label>
+    <label>Hair colour <select id="hairColor"></select></label>
+    <label>Outfit <select id="outfit"></select></label>
+    <label><input type="checkbox" id="satchel" checked> Satchel (backpack slot)</label>
+  </fieldset>
+  <fieldset><legend>Direction</legend>
+    <div class="dirs" id="dirs"></div>
+    <label><input type="checkbox" id="all8"> Show all 8 directions</label>
+  </fieldset>
+  <fieldset><legend>Animation</legend>
+    <label><select id="anim"></select></label>
+    <label>Speed <input type="range" id="speed" min="0.1" max="2" step="0.05" value="1"><span id="speedv">1.00×</span></label>
+    <div class="row"><button id="play">Pause</button><button id="step">Step ▸</button><button id="restart">Restart</button></div>
+    <label>Zoom <input type="range" id="zoom" min="2" max="8" step="1" value="4"></label>
+  </fieldset>
+  <fieldset><legend>Mount</legend>
+    <label><select id="mount"><option value="">None (on foot)</option></select></label>
+    <label><input type="checkbox" id="occl"> Tint occlusion (front=red, rear=blue)</label>
+  </fieldset>
+  <fieldset><legend>Debug</legend>
+    <label><input type="checkbox" id="anchors" checked> Pivot &amp; anchors</label>
+    <label><input type="checkbox" id="grid"> 32 px tile grid</label>
+  </fieldset>
+  <fieldset><legend>Layers</legend><div class="layers" id="layers"></div></fieldset>
+</aside>
+<section class="stage">
+  <canvas id="cv"></canvas>
+  <div id="info"></div>
+</section>
+</main>
+<script src="data.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
