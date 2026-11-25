@@ -95,7 +95,7 @@
       "id": "trainer.direction_master.draft_extract",
       "path": "assets/concepts/trainer-gate02/draft-extract/",
       "storage_status": "in_repo",
-      "review_status": "draft_pending_owner_review",
+      "review_status": "look_approved_cleanup_pending",
       "format": "png",
       "count": 16,
       "dimensions": [
