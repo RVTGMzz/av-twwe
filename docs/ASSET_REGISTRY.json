@@ -117,7 +117,7 @@
         96
       ],
       "task": "ART-003-G02",
-      "notes": "Codex clean-up of the approved draft (3 rounds, reviewed by Claude Code). 16/16 TECH-PASS. Male: clean. Female S/W/NW/E/SE clean; ponytail on her right side in all 8. Female N and NE show fragmented bow/hair pixels and SW a small dark notch on the top hair; needs owner decision."
+      "notes": "Male: Codex clean-up of the approved draft. Female: round 4 whole-sprite regeneration by Codex (no patching) after owner rejected overlapping pieces. 16/16 TECH-PASS. Ponytail on her right side in all 8; no doubled parts. Known: female NE drawn in a noticeably different style (sharper outline, narrower head, more saturated), fix pending."
     }
   ]
 }

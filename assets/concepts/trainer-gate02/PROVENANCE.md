@@ -1,47 +1,55 @@
 # ART-003-G02 final direction-master provenance
 
 Date: 2026-11-25  
-Approved base: `draft-extract/trainer_{m,f}_{s,sw,w,nw,n,ne,e,se}_64x96.png` (owner-approved look, D018)  
-Design reference: `../trainer-master-v3.webp`
+Approved design reference: `../trainer-master-v3.webp`  
+Scale/reference geometry: `draft-extract/trainer_f_{s,sw,w,nw,n,ne,e,se}_64x96.png`
 
-## Tools and method
+## Final source decision
 
-- OpenAI built-in image edit produced one hair-placement reference sheet from `draft-extract/preview_4x.png` plus `trainer-master-v3.webp`.
-- Python 3 + Pillow performed every crop, exact 4x nearest-neighbour reduction, mask/paste, palette remap, hard-alpha cleanup, detail edit, lineup composition and validation preparation.
-- The generated sheet was **not** accepted as a full-sprite replacement because it changed non-hair pixels and added a background. Only segmented female hair/bow patch pixels were used in the four named directions. They were remapped to each approved draft sprite's existing palette; all other pixels started from the approved draft.
-- Final PNGs have hard alpha only, use no interpolation after the exact nearest-neighbour reduction, and add no colours beyond the corresponding approved draft palette.
+The eight final female files are **whole regenerated sprites**, not patches. No pixels from the rejected composite female files were retained, and no hair, bow, body, limb, clothing, or accessory region was pasted onto an older sprite.
 
-### Review repair pass
+- S, SW, W, NW, N, E, and SE use the complete coherent figures from `build/codex-g02/generated-reference/trainer_f_*_generated_64x96.png`.
+- NE was regenerated as one complete figure with OpenAI's built-in image-generation tool because the coherent-set NE put the ponytail on the wrong side. The accepted full-resolution source is preserved at `build/codex-g02/generated-reference/trainer_f_ne_whole_regenerated_source.png`.
+- The eight male files were not modified in this whole-female replacement pass. SHA-256 comparison before and after the write reported `MALE-HASH-PASS 8/8 unchanged`.
 
-After technical-lead lineup review, `trainer_f_sw_64x96.png`, `trainer_f_n_64x96.png`, and `trainer_f_ne_64x96.png` received a deterministic Pillow-only repair pass. This pass supersedes the earlier description of the NE patch:
+## Image-generation prompt for accepted NE source
 
-- SW retained its corrected generated screen-left ponytail, while the approved draft top cap, goggles, and upper hair clusters were restored with an irregular pixel boundary to remove the dark paste seam.
-- N was rebuilt from the approved N draft. The old left/centred blue bow was converted back into existing silver-hair colours, and only the corrected screen-right bow and external ponytail pixels were copied from the prior hair patch. This restored the round draft silhouette and removed the horizontal seam.
-- NE was rebuilt from the approved NE draft, including its complete head, torso, belt, and legs. The old left bow was recoloured into existing silver-hair colours; only the wrong-side external lower tail was trimmed. The replacement right bow/tail came from the approved unmirrored NW draft and was palette-mapped into NE. No generated pixels or pixels from the broken prior NE patch remain in the repaired NE file.
+> Use case: precise-object-edit  
+> Asset type: standalone Aevoria female trainer NE direction sprite source  
+> Input images: the approved design board and coherent 8-direction set are style/identity references; the standalone NE images are failed targets. Regenerate the entire figure from scratch as one coherent sprite.  
+> Primary request: Create the NE direction (3/4 BACK) female trainer, turned away from the viewer and facing screen-right. Show mostly the back of her head and back/right side of her torso, with only a narrow right cheek/profile. Match the NE pose in the coherent 8-direction reference.  
+> Critical hair geometry: her one blue bow and one silver-white ponytail must attach on SCREEN-RIGHT. The long ponytail must form the outermost screen-right silhouette and trail down the right side behind her shoulder. The screen-left silhouette must contain only the rounded back-head hair--NO ponytail, NO bow, NO hanging hair tail on screen-left.  
+> Design: exactly one continuous silver-white hair mass, exactly one blue bow, exactly one ponytail; brown goggles on head; blue scarf; cream jacket with blue accents; brown gloves, belt and pouches; dark socks; brown boots.  
+> Style: crisp pixel art matching the coherent set, same chibi scale/proportions and selective outlines.  
+> Composition: one complete full-body figure only, upright and centred, generous transparent margin, feet visible, no crop.  
+> Constraints: truly transparent background with zero scenery, glow, shadow, gradient, black fill, or halo. No doubled/overlapping body pieces, no extra limbs/accessories/hair fragments. Do not mirror an existing whole sprite. No blur, antialiasing, text, or watermark.
 
-Image-edit prompt used for the shared reference sheet:
+An earlier NE generation attempt was rejected and is not used because it remained side/front-facing and placed the tail on screen-left.
 
-> Edit only the female character hair and blue bow in the S, SW, N, and NE cells of the 4x lineup. The female side ponytail and bow must be on HER RIGHT in every direction: S screen-left; SW screen-left/back of head; N off-centre screen-right; NE screen-right. Use the approved master board only for identity/style reference. Preserve every male sprite exactly; preserve female body, face, goggles, straps, clothing, canvas placement, scale, feet, palette family, and all W/NW/E/SE sprites exactly. Do not redesign. Keep crisp pixel clusters, hard edges, transparent background, no blur, no antialiasing, no full black outline. Make the smallest possible hair-region changes. Avoid mirroring whole sprites, moving bodies, changing proportions, adding objects, changing non-hair pixels, backgrounds, text, or watermarks.
+## Whole-sprite processing
 
-## Per-file edits
+Python 3 and Pillow performed only whole-figure processing:
 
-| File | Hair source | Pixel edits |
+1. Hardened alpha to 0 or 255 and discarded the transparent generation glow/halo.
+2. Cropped each complete generated figure as a single unit.
+3. For NE only, reduced the complete full-resolution figure to 91 px tall with nearest-neighbour sampling; no part was processed separately.
+4. Placed each complete figure, as one unit, on a transparent 64x96 canvas, horizontally centred with the last opaque foot row at y=93 (two transparent rows below).
+5. Globally reduced each complete sprite to at most 48 opaque colours with dithering disabled.
+6. Removed only disconnected 1-4 px generation fragments and four-neighbour-isolated pixels.
+
+No manual repainting, mirroring, regional compositing, or old-sprite patching was performed.
+
+## Per-file record
+
+| File | Whole-figure source | Final processing |
 |---|---|---|
-| `trainer_m_s_64x96.png` | Approved draft; no regeneration | Sharpened red scarf, goggle lenses/frames, belt buckle, pouch flaps and boot cuffs; removed detached 1–3 px islands if present. |
-| `trainer_m_sw_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_m_w_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_m_nw_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_m_n_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_m_ne_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_m_e_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_m_se_64x96.png` | Approved draft; no regeneration | Same named male-detail cleanup. |
-| `trainer_f_s_64x96.png` | **Regenerated hair/bow region only** from image-edit S patch | Pasted screen-left/right-side ponytail and bow; retained approved body/face/equipment; sharpened blue scarf/bow, goggles, buckle, pouch flaps and boot cuffs. |
-| `trainer_f_sw_64x96.png` | **Regenerated hair/bow region only** from image-edit SW patch, with approved-draft cap restored in review repair | Retained the screen-left/back right-side ponytail; restored the approved draft top cap, goggles, and upper hair clusters to remove the dark seam; retained approved body/face/equipment and prior named detail cleanup. |
-| `trainer_f_w_64x96.png` | Approved draft; no regeneration | Hair side retained; only named female-detail cleanup. |
-| `trainer_f_nw_64x96.png` | Approved draft; no regeneration | Hair side retained; only named female-detail cleanup. |
-| `trainer_f_n_64x96.png` | Approved N draft plus **regenerated right bow/external-tail pixels only** from the prior N hair patch | Rebuilt the head from the approved draft, converted the old left/centred bow back to silver hair, and copied only the corrected screen-right bow/tail. The round silhouette and draft body/equipment were restored; the horizontal paste seam was removed. |
-| `trainer_f_ne_64x96.png` | Approved NE draft plus pixel-edited bow/tail material from the approved unmirrored NW draft; **no regenerated pixels remain** | Rebuilt from the complete NE draft; converted the old left bow to silver hair, trimmed only the wrong-side external lower tail, and placed the NW-derived bow/tail on screen-right. The full back-head mass and all torso/belt/leg pixels were restored. |
-| `trainer_f_e_64x96.png` | Approved draft; no regeneration | Hair side retained; only named female-detail cleanup. |
-| `trainer_f_se_64x96.png` | Approved draft; no regeneration | Hair side retained; only named female-detail cleanup. |
+| `trainer_f_s_64x96.png` | `trainer_f_s_generated_64x96.png` | Complete generated S figure; hard alpha, whole-sprite centring/foot alignment, global 48-colour reduction. Ponytail: screen-left. |
+| `trainer_f_sw_64x96.png` | `trainer_f_sw_generated_64x96.png` | Complete generated SW figure; same whole-sprite processing. Ponytail: screen-left/back. |
+| `trainer_f_w_64x96.png` | `trainer_f_w_generated_64x96.png` | Complete generated W figure; same whole-sprite processing. Ponytail: behind the head. |
+| `trainer_f_nw_64x96.png` | `trainer_f_nw_generated_64x96.png` | Complete generated NW figure; same whole-sprite processing. Ponytail: screen-right. |
+| `trainer_f_n_64x96.png` | `trainer_f_n_generated_64x96.png` | Complete generated N figure; same whole-sprite processing. Ponytail: off-centre screen-right. |
+| `trainer_f_ne_64x96.png` | `trainer_f_ne_whole_regenerated_source.png` | **Entire NE figure regenerated**, then whole-figure nearest-neighbour reduction and the same global processing. Ponytail: screen-right. |
+| `trainer_f_e_64x96.png` | `trainer_f_e_generated_64x96.png` | Complete generated E figure; same whole-sprite processing. Ponytail: behind the head. |
+| `trainer_f_se_64x96.png` | `trainer_f_se_generated_64x96.png` | Complete generated SE figure; same whole-sprite processing. Ponytail: screen-left. |
 
-No whole final sprite was regenerated. Three files contain regenerated **hair-region pixels only** (`f_s`, `f_sw`, and `f_n`); `f_ne` is now approved-draft-only pixel editing, including a small transplant from the approved NW draft. The other twelve files are approved-draft pixel edits only.
+Final visual QA lineup: `build/codex-g02/female_final_8x.png`.
