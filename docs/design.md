@@ -43,3 +43,6 @@ Day/night and weather affect spawn tables and NPC routines; doc baseline propose
 
 ## Creative policy
 English creature, item and skill names with Vietnamese dialogue/localization; no requirement for Vietnamese-themed naming. Original art, lore, sound and code; record provenance and licensing. No copied game content. Public repo; only public-safe design material.
+
+## Approved Aspect System (2026-11-25)
+See [Aspect System 1.0](aspects.md), the canonical twelve-Aspect rules and provisional matchup matrix. Origin, Aspect, role and rarity are independent. One or two distinct Aspects per Kin. Neutral is damage only. Resonance deferred. The initial visual roster now replaces egg concepts with Pebblit and Kettli; earlier egg entries above are historical brainstorm, not approved roster.
