@@ -55,9 +55,26 @@
     {
       "id": "trainer.modular.batch01",
       "path": "assets/characters/trainer/",
+      "storage_status": "not_in_repo",
+      "review_status": "rejected_art",
+      "task": "ART-003-B01",
+      "notes": "Procedural prototype sprites rejected by owner 2026-11-25; regenerable into build/ for pipeline tests only; not a design reference."
+    },
+    {
+      "id": "trainer.master.gate01",
+      "path": "assets/concepts/trainer-gate01/",
       "storage_status": "not_created",
-      "review_status": "planned",
-      "task": "ART-003-B01"
+      "review_status": "blocked_needs_image_generation",
+      "task": "ART-003-G01",
+      "notes": "3 male + 3 female 3/4-front options; needs exact concept art-direction-01.webp from owner and an agent with image generation."
+    },
+    {
+      "id": "tool.asset_pipeline.v1",
+      "path": "tools/asset-pipeline/",
+      "storage_status": "in_repo",
+      "review_status": "technical_tested",
+      "commit": "87452158a7d67cc0c730f69e6d25ccc82305df10",
+      "notes": "check_master, lossless WebP converter, layer compositor/packer, offline viewer; prototype rig kept only as contract test."
     }
   ]
 }

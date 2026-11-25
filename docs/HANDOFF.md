@@ -1,25 +1,42 @@
 # AV-TWWE — Current handoff
-Checkpoint 004 | 2026-11-25 | Pre-production
-Active task: ART-003-B01 — Modular Trainer proof of concept (docs/tasks/ART-003-B01.md).
-Active implementation branch: feature/modular-trainer (created from shared baseline after this handoff). Read this file on that branch on resume. Last prior art documentation commit: 4ce172db7b3d131d2c6a9dd4d722ea7d59336acd. To determine current actual head use git log -1 and compare remote; do not rely on a self-referential SHA here.
+Checkpoint 005 | 2026-11-25 | Pre-production
+Active branch: **feature/modular-trainer** (read this file on that branch, not main). Last implementation commit: 8745215 (asset pipeline). Handoff/docs commit follows it; use `git log -1` + `git ls-remote origin` for the real head.
+Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/ART-003-G01.md. Full owner requirements: docs/tasks/ART-003-spec.md. ART-003-B01 is ON HOLD.
 
-## Done
-- World, combat, capture, balance, roadmap, 12 Aspect system and SVG glyph master documented. Starter Duo visual concept approved; brand visual board pending approval.
-- Shared instructions AGENTS.md, CLAUDE.md, decision log, asset registry, changelog, task spec and handoff established.
-- Prior aspect JSON verification: 1,014 single/dual cases including Neutral; no confirmed execution of Node test file or engine.
-- Three concept boards converted to WebP (1,192,498 bytes total) and archived in owner Library; binary files not committed to GitHub.
+## Owner verdict this session (binding — D016, D017)
+- The procedural trainer sprites Claude Code generated with scripts are **NOT approved artistically** (v1 too chibi/bobblehead; v2 too thin, long and stiff). Do not reuse them as a design base. They are not in Git.
+- Stop bulk animation. Work in gates with owner approval each time: GATE 01 character master → GATE 02 eight directions → GATE 03 modular separation → GATE 04 animation.
+- Character masters must come from real image generation + pixel editing. Scripts may only process, split, align, pack and test.
+- Target: ~3–3.5 heads, readable limbs (not stick-thin), real torso, cute not childish; premium pixel art with selective outlines and depth lighting. Identity: male messy brown hair + goggles + red scarf + cream/brown/blue explorer outfit; female silver/white side tie with blue ribbon + goggles + blue eyes + cream/blue/gold outfit, distinct design.
+
+## Done (with evidence)
+- 8745215 `tools/asset-pipeline/`: modular layer compositor with shared body depth masks (layers stay correct when swapped), per-direction render order + held-item/mount rules, anchors (hand_item_anchor, seat_anchor, saddle_anchor, rider_offset, rider_scale, shadow_anchor, collision_bounds, animation_sync), mount front/rear occlusion split, frame reuse (faint_hold), shelf atlas packing, metadata schema, offline Asset Viewer, `convert_webp.py`, `check_master.py`. See tools/asset-pipeline/README.md.
+- Actually run on this machine (Windows, Node 24.22.1, Python 3.8.10, Pillow 10.4.0):
+  - `node tools/asset-pipeline/build.mjs` → 48 prototype atlases (43 trainer layer variants, 10 animations × 8 directions, mount, Aevin, Bond FX) in ~4–5 s, written to build/ only.
+  - `python tools/asset-pipeline/convert_webp.py` → all 48 VP8L lossless, pixel-exact round-trip TRUE; 1,593,953 B PNG → 779,820 B WebP (48.9 %).
+  - Asset Viewer opened at http://localhost:8765/tools/asset-pipeline/viewer/ in a browser: character/skin/hair/outfit switching, directions, animation, mount (ride_walk) composited with anchors. Pipeline works; art rejected.
+  - `check_master.py` smoke test: synthetic 48x64 transparent image TECH-PASS, 50x50 opaque image TECH-FAIL (exit 1). No real masters exist yet.
+- Docs: ART-003-spec.md (owner brief saved), ART-003-G01.md (task + image prompt), DECISIONS D016/D017, registry, changelog.
+
+## Blocked / limits
+- **No image-generation tool in this Claude Code environment.** GATE 01 cannot be produced here. Claude did not create placeholder masters.
+- Approved trainer concept `assets/concepts/art-direction-01.webp` is still not in Git (owner Library only). Owner must provide the exact file; verify SHA-256 from ASSET_REGISTRY before use. Images A/B mentioned in the owner's message were not visible to Claude in this session.
+- Not done: no approved sprite, no GATE 02–04, no P1 swim/fly, no engine. No CI.
 
 ## Next concrete action
-1. Check out feature/modular-trainer safely after fetch. Read ART-003-B01 and decisions. Inspect repository and tools; confirm whether image generation available.
-2. Import exact concept WebP from owner ZIP into assets/concepts/ if available; verify manifest hashes; update registry only after actual upload. Do not substitute other artwork silently.
-3. Build minimal modular pose/layer proof and offline Asset Viewer; show previews and verify layer alignment in eight directions before expanding. No merge to main.
-4. Report QA and update this handoff on task branch before push/device switch.
+1. Owner: upload `art-direction-01.webp` (and any trainer concept close-ups) to `assets/concepts/` on this branch, or attach them to the agent doing GATE 01.
+2. ChatGPT (image tool) or Codex with image generation: execute docs/tasks/ART-003-G01.md — 3 male + 3 female options, 3/4 front, 64x80 first (also try 48x64/64x96), nearest-neighbour downscale + hand pixel clean-up, PROVENANCE.md, then `python tools/asset-pipeline/check_master.py assets/concepts/trainer-gate01/*.png` and show `build/asset-pipeline/qa/gate01_review.png` (1x + 4x) to the owner.
+3. Owner picks one option per gender → record in DECISIONS → GATE 02.
+4. Claude Code (tech lead) after GATE 02/03 approval: point the pipeline/viewer at the split layers of the approved master; adjust canvas (64x80 or chosen size) in metadata.
 
-## Open / blocked
-- No production trainer sprites, mounts, animations, viewer, engine or playable build yet.
-- Concept binaries pending import; owner has ZIP aevoria-concepts-webp.zip from earlier chat. See art-pipeline.md and registry.
-- Brand final artwork, currency, first region, engine, numerical balance and detailed lore pending approval/testing.
-- No CI run in this checkpoint; documentation only. Do not claim PASS for unexecuted tests.
-
-## Resume / reproduce
-Use the same remote on both machines. Inspect git status; preserve local changes. Fetch origin. Switch to active branch if clean; fast-forward only. Read AGENTS.md, DECISIONS and active task. Run actual QA commands as delivered by Codex; existing aspect test can be run using node tests/aspects.test.mjs from repo root if Node available. After implementation checkpoint, commit/push updates and verify remote SHA. Report conflicts or missing dependencies, never force push. Main stores baseline; branch stores latest task handoff.
+## Resume / reproduce on another machine
+```
+git fetch origin
+git switch feature/modular-trainer
+git pull --ff-only
+node tools/asset-pipeline/build.mjs          # prototype contract test, output in build/
+python tools/asset-pipeline/convert_webp.py
+python -m http.server 8765                   # open http://localhost:8765/tools/asset-pipeline/viewer/
+node tests/aspects.test.mjs                  # existing aspect test
+```
+Preserve local changes; never force push; never merge main without owner approval.

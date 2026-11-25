@@ -8,7 +8,7 @@ Original offline, mobile-first creature-taming action RPG. A living fantasy worl
 
 ## Resume across machines
 
-Read [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) and [current handoff](docs/HANDOFF.md) before starting work. Active implementation: `feature/modular-trainer`, task [ART-003-B01](docs/tasks/ART-003-B01.md). Fetch and fast-forward safely; read the latest handoff on the task branch, not just main.
+Read [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) and [current handoff](docs/HANDOFF.md) before starting work. Active implementation: `feature/modular-trainer`, task [ART-003-G01](docs/tasks/ART-003-G01.md) (requirements: [ART-003-spec](docs/tasks/ART-003-spec.md)); asset tools in [tools/asset-pipeline](tools/asset-pipeline/README.md). Fetch and fast-forward safely; read the latest handoff on the task branch, not just main.
 
 ## Project documentation
 
