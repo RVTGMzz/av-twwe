@@ -47,7 +47,7 @@
     {
       "id": "concept.trainer_master.v3",
       "path": "assets/concepts/trainer-master-v3.webp",
-      "storage_status": "library_only_pending_git",
+      "storage_status": "in_repo",
       "review_status": "visual_approved",
       "format": "webp",
       "bytes": 345188,
@@ -57,7 +57,7 @@
         1024
       ],
       "task": "ART-003-V3-APPROVAL",
-      "notes": "Option A recommended baseline. Import attempt 2026-11-25 by Claude Code failed: attachment not received and no local file matched the hash. Upload the exact file, then verify hash before use."
+      "notes": "Owner-approved V3 board; Option A recommended baseline. Imported 2026-11-25 from owner chat attachment; SHA-256 verified equal to ART-003-V3-APPROVAL.md. Reference board, not a sprite atlas."
     },
     {
       "id": "ui.aspect.glyphs.v1",

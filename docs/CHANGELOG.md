@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 006 — Trainer Master V3 reference in Git (2026-11-25)
+- assets/concepts/trainer-master-v3.webp imported, SHA-256 verified against ART-003-V3-APPROVAL.md (fed477a). Option A = baseline. GATE 02 images assigned to ChatGPT (no image generation in Claude Code).
+
 ## Checkpoint 005 — Asset pipeline; trainer art reset to gates (2026-11-25)
 - 8745215 asset pipeline: depth-masked modular layer compositor, per-direction render order, anchors (hand_item, seat, saddle, rider_offset, collision), mount front/rear split, atlas packing, lossless WebP converter (pixel-exact check), offline Asset Viewer, GATE 01 master checker.
 - Procedural trainer sprites (two proportion passes) rejected by owner; removed from Git scope, kept regenerable in build/ only. Decisions D016/D017.
