@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "project": "AV-TWWE",
+  "updated": "2026-11-25",
+  "policy": "Repo paths are intended unless storage_status is in_repo; concept is not production.",
+  "assets": [
+    {
+      "id": "concept.art_direction.01",
+      "path": "assets/concepts/art-direction-01.webp",
+      "storage_status": "library_only_pending_git",
+      "review_status": "reference",
+      "format": "webp",
+      "bytes": 358688,
+      "sha256": "16b749d0f86ba20f4cb513e218911e54dae16f5a8945f726eef460901258c62d",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "notes": "Older currency label obsolete; egg designs replaced."
+    },
+    {
+      "id": "concept.starter_duo.01",
+      "path": "assets/concepts/starter-duo-01.webp",
+      "storage_status": "library_only_pending_git",
+      "review_status": "visual_approved",
+      "format": "webp",
+      "bytes": 380558,
+      "sha256": "40dde14e2887b3d561f8a99f78ef5a9fdb91411efef96fefc0312e9423e7eac0",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "concept.brand_assets.02",
+      "path": "assets/concepts/brand-assets-02.webp",
+      "storage_status": "library_only_pending_git",
+      "review_status": "pending_approval",
+      "format": "webp",
+      "bytes": 453252,
+      "sha256": "282cf15264e67c4b185dc92b8299964e9e6cb6e3f86c5a2b603ccef55aa03a60",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "id": "ui.aspect.glyphs.v1",
+      "path": "assets/ui/aspects/glyphs.svg",
+      "storage_status": "in_repo",
+      "review_status": "vector_baseline_not_raster_qa",
+      "format": "svg",
+      "count": 12
+    },
+    {
+      "id": "trainer.modular.batch01",
+      "path": "assets/characters/trainer/",
+      "storage_status": "not_created",
+      "review_status": "planned",
+      "task": "ART-003-B01"
+    }
+  ]
+}
