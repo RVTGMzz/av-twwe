@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 010 — GATE 02 female whole-sprite set (2026-11-25)
+- Female sprites regenerated as whole figures (rounds 4–5), with no patch overlap, the ponytail on her right in all 8 directions and NE restyled to match. 16/16 TECH-PASS, pending owner approval.
+
 ## Checkpoint 009 — GATE 02 clean-up candidate (2026-11-25)
 - Codex clean-up of 16 direction sprites (ponytail side fixed, details sharpened), 16/16 TECH-PASS, pending owner review; known: female N/NE fragmented bow pixels, SW notch.
 
