@@ -45,6 +45,21 @@
       ]
     },
     {
+      "id": "concept.trainer_master.v3",
+      "path": "assets/concepts/trainer-master-v3.webp",
+      "storage_status": "library_only_pending_git",
+      "review_status": "visual_approved",
+      "format": "webp",
+      "bytes": 345188,
+      "sha256": "c4deb5942bbdf913aa669928480f22a14737efe0792b1c020dcd5fef8de1bc18",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "task": "ART-003-V3-APPROVAL",
+      "notes": "Option A recommended baseline. Import attempt 2026-11-25 by Claude Code failed: attachment not received and no local file matched the hash. Upload the exact file, then verify hash before use."
+    },
+    {
       "id": "ui.aspect.glyphs.v1",
       "path": "assets/ui/aspects/glyphs.svg",
       "storage_status": "in_repo",

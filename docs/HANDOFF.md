@@ -3,6 +3,12 @@ Checkpoint 005 | 2026-11-25 | Pre-production
 Active branch: **feature/modular-trainer** (read this file on that branch, not main). Last implementation commit: 8745215 (asset pipeline). Handoff/docs commit follows it; use `git log -1` + `git ls-remote origin` for the real head.
 Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/ART-003-G01.md. Full owner requirements: docs/tasks/ART-003-spec.md. ART-003-B01 is ON HOLD.
 
+## Update 2026-11-25 — Trainer Master V3 approved (fed477a, docs/tasks/ART-003-V3-APPROVAL.md)
+- Owner approved V3 visual direction; Option A = recommended baseline. Active gate is now **GATE 02 Direction Master** (male/female, 8 directions, 1x + 4x preview, owner approval before modular separation).
+- **Reference import BLOCKED:** Claude Code did not receive the WebP attachment. No file matching 1536x1024 / 345,188 B / SHA-256 c4deb594…bc18 was found on this machine (Downloads checked; nothing matched). `assets/concepts/trainer-master-v3.webp` is NOT in Git. Registry entry `concept.trainer_master.v3` records the expected hash as library_only_pending_git.
+- **GATE 02 images:** Claude Code has no image-generation tool, so it cannot draw the 8-direction master at the approved quality. Per owner rule, ChatGPT (image tool) produces the Direction Master; Claude Code/Codex handle import, hash check, `check_master.py`, previews, layer separation, animation and integration. Do not redesign the approved character; do not reuse rejected sprites.
+- Next action: owner (or ChatGPT) commits the exact `trainer-master-v3.webp` to `assets/concepts/` on this branch, or puts it on this machine and asks Claude Code to verify the hash and commit it. Then ChatGPT delivers the GATE 02 sheets (suggested path `assets/concepts/trainer-gate02/`, one PNG per character and direction, transparent, same canvas) for technical QA.
+
 ## Owner verdict this session (binding — D016, D017)
 - The procedural trainer sprites Claude Code generated with scripts are **NOT approved artistically** (v1 too chibi/bobblehead; v2 too thin, long and stiff). Do not reuse them as a design base. They are not in Git.
 - Stop bulk animation. Work in gates with owner approval each time: GATE 01 character master → GATE 02 eight directions → GATE 03 modular separation → GATE 04 animation.
