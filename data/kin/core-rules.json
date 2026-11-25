@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "status": "proposal_for_playtest",
+  "level": {
+    "min": 1,
+    "max": 60,
+    "xp_next": {
+      "constant": 50,
+      "linear": 10,
+      "quadratic": 2
+    },
+    "level_factor_start": 0.25,
+    "level_factor_end": 1
+  },
+  "rarities": [
+    {
+      "id": "common",
+      "start": 60,
+      "mastery_cost": 400
+    },
+    {
+      "id": "uncommon",
+      "start": 70,
+      "mastery_cost": 340
+    },
+    {
+      "id": "rare",
+      "start": 80,
+      "mastery_cost": 280
+    },
+    {
+      "id": "legendary",
+      "start": 90,
+      "mastery_cost": 200
+    }
+  ],
+  "budget_cap": 100,
+  "mastery": {
+    "curve": "quadratic_ease_out",
+    "min_level": 20,
+    "credit_source": "eligible_participation",
+    "duplicate_required": false
+  },
+  "stats": [
+    "hp",
+    "atk",
+    "mag",
+    "def",
+    "res",
+    "agi"
+  ],
+  "stat_conversion": {
+    "hp": {
+      "base": 50,
+      "per_point": 8
+    },
+    "atk": {
+      "base": 5,
+      "per_point": 2
+    },
+    "mag": {
+      "base": 5,
+      "per_point": 2
+    },
+    "def": {
+      "base": 5,
+      "per_point": 2
+    },
+    "res": {
+      "base": 5,
+      "per_point": 2
+    },
+    "agi": {
+      "base": 5,
+      "per_point": 2
+    }
+  },
+  "role_profiles": {
+    "melee_physical": [
+      23,
+      29,
+      5,
+      19,
+      12,
+      12
+    ],
+    "ranged_magic": [
+      16,
+      5,
+      32,
+      10,
+      17,
+      20
+    ],
+    "tank": [
+      35,
+      12,
+      5,
+      26,
+      15,
+      7
+    ],
+    "support": [
+      20,
+      5,
+      24,
+      13,
+      23,
+      15
+    ],
+    "controller": [
+      18,
+      7,
+      25,
+      12,
+      17,
+      21
+    ]
+  },
+  "personality": {
+    "transfer_points": 2,
+    "minimum_weight": 3,
+    "examples": [
+      {
+        "id": "brave",
+        "from": "res",
+        "to": "atk"
+      },
+      {
+        "id": "clever",
+        "from": "atk",
+        "to": "mag"
+      },
+      {
+        "id": "calm",
+        "from": "agi",
+        "to": "res"
+      },
+      {
+        "id": "lively",
+        "from": "def",
+        "to": "agi"
+      },
+      {
+        "id": "sturdy",
+        "from": "mag",
+        "to": "def"
+      },
+      {
+        "id": "balanced",
+        "from": null,
+        "to": null
+      }
+    ]
+  },
+  "traits": {
+    "active_slots": 1,
+    "per_species_candidate_count": [
+      2,
+      3
+    ],
+    "rarity_power_multiplier": false
+  },
+  "forms": {
+    "evolution_levels": [
+      20,
+      40
+    ],
+    "optional": true,
+    "reset_level": false,
+    "reset_mastery": false,
+    "same_budget_cap": true
+  },
+  "derived": {
+    "base_crit_chance": 0.05,
+    "crit_multiplier": 1.5,
+    "crit_chance_cap": 0.35,
+    "focus_cooldown_reduction_cap": 0.2,
+    "movement_bonus_cap": 0.2,
+    "random_dodge_from_agility": false
+  },
+  "cosmetic_variant": {
+    "id": "prismatic",
+    "power_multiplier": 1
+  }
+}
