@@ -20,7 +20,7 @@ for(let j=i+1;j<12;j++){const y=ids[i],z=ids[j];const m=multiplier(x,[y,z]);asse
 assert.equal(multiplier('ember',['grove','frost']),125);
 assert.equal(multiplier('ember',['gale','tide']),75);
 assert.equal(multiplier('ember',['grove','tide']),100);
-assert.equal(multiplier('ember',['grove','stone']),125===d.matrix.ember.stone?125:Math.max(75,Math.min(125,125+d.matrix.ember.stone-100)));
+assert.equal(multiplier('ember',['grove','stone']),125);
 assert.throws(()=>multiplier('ember',['grove','grove']));assert.throws(()=>multiplier('ember',[]));assert.throws(()=>multiplier('ember',['neutral']));
 for(const k of d.prototype_kin)assert.doesNotThrow(()=>multiplier('neutral',k.aspects));
 console.log('PASS: '+single+' single and '+dual+' dual matchup cases; glyph IDs and roster validated');
