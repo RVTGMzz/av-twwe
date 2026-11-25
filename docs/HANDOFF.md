@@ -5,7 +5,7 @@ Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/
 
 ## Update 2026-11-25 — Trainer Master V3 final reference (GATE 02 active)
 - Authoritative reference: `assets/concepts/trainer-master-v3.webp` = final "Character Concept & 8 Directions" board, 1536x1024, 288,542 B, SHA-256 b6fbbd9efa7d6217354b0f2f577a255be7e80c4d89bd831984c8c0d3fa58be50 (verified). Replaces all older trainer references (3-option board c4deb594… only in history at ae0636f). Option A design.
-- Direction check (docs/tasks/ART-003-G02.md): male consistent in all 8 directions; **female side ponytail/bow flips** (S unclear, SW and NE mirrored, N centred). Fix before sprites: tie stays on her right side in every direction; never mirror her hair, bow or straps.
+- Direction check (docs/tasks/ART-003-G02.md): male consistent in all 8 directions; **female side ponytail/bow flips** (S unclear, SW and NE mirrored, N centred). Owner decision: fix it in the GATE 02 sprites, not on the board. The tie stays on her right side in every direction; never mirror her hair, bow or straps.
 - Board is concept art, not 64x96 sprites. GATE 02 sprite set (16 PNG, 64x96) is still to be made by ChatGPT or an artist; Claude Code has no image generation. Animation is blocked until the GATE 02 sprites are owner-approved and GATE 03 separation is done.
 - Next action: ChatGPT produces `assets/concepts/trainer-gate02/*` per ART-003-G02 (with the ponytail fix). Then Claude Code runs `check_master.py`, builds 1x + 4x and direction-consistency previews and asks the owner to approve.
 
