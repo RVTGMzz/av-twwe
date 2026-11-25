@@ -28,3 +28,6 @@ Candidate Aevin grades: base 1x, Prime 1.5x, Royal 2x, Astral 3x, Eternal guaran
  
 ## QA design gate
 Simulate equal investment AND equal endgame development separately. Test early/mid/late growth, single-target DPS, AoE, sustain, control, mobility, cooldown, boss survival, encounter completion, and matchup variance. Assess each role in relevant scenarios, not a raw stat sum. Use deterministic random seeds and reproducible reports. Early targets (proposal): within 10–15% role benchmark at mature investment, no compulsory rare Kin for progression, no endlessly scaling passive loops. Manual playtest required for usability, hitboxes and combat feel. New regions expand horizontally; avoid releasing stronger mandatory species each update.
+
+## Aspect update (2026-11-25)
+[Aspect System 1.0](aspects.md) is authoritative for elemental damage: maximum ±25%, no multiplication or immunities, one attack Aspect per damaging hit, distinct one/two defender Aspects, no Resonance in initial scope. The 12×12 matrix is provisional until combat testing.
