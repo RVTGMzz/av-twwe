@@ -11,6 +11,7 @@ Requirements: Node 18+ (no npm packages), Python 3.8+ with Pillow (WebP support)
 | `check_flicker.py` | animation check: bright specks appearing only in some frames (blinking white dots), marked sheets on a dark background | active, mandatory for animations |
 | `check_gaps.py` | light background specks trapped in dark leg/boot gaps (sprites + walk frames), marked sheets | active, mandatory |
 | `carve_gaps.py` | make the enclosed space between legs transparent again (keeps outlines; updates labels, full_src, walk) | active |
+| `import_sprites.py` | import PixelLab/artist PNGs onto the 64x96 canvas (hard alpha, integer scale, feet on y=93, no jitter) | active |
 | `separate_layers.py` | GATE 03 label maps, split, pixel-exact recombination, covered-area verify | active |
 | `animate.py` | GATE 04: idle from layers; walk-label (propagate labels from f0) and walk-split (pixel-exact layer atlases) | active |
 | `extract_board.py` | cut direction figures from an approved board | used for GATE 02 draft |

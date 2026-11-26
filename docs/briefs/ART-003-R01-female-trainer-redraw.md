@@ -83,3 +83,11 @@ Our game builds the character from separate layers, so outfits can change. Best 
 - `docs/briefs/female_redraw_reference.png`: A = approved male sprites (scale and style), B = approved female design (board hero pose + turnaround).
 - `assets/concepts/trainer-master-v3.webp`: full owner-approved concept board (SHA-256 b6fbbd9e…be50).
 - Specs and decisions: `docs/tasks/ART-003-spec.md`, `docs/DECISIONS.md` (D016–D021), `docs/art-pipeline.md`.
+
+## 11. PixelLab workflow (owner choice, 2026-11-26)
+- Connection: PixelLab MCP for Claude Code. The owner adds it with their own API token in their own terminal (the token is never pasted in chat or stored in the repo):
+  `claude mcp add pixellab https://api.pixellab.ai/mcp -t http -H "Authorization: Bearer <YOUR_PIXELLAB_TOKEN>"`
+  Docs: https://www.pixellab.ai/mcp. An 8-direction "Pro" character needs a Tier 1 subscription; check the current price at https://www.pixellab.ai.
+- Generation: create the character from reference B (description + the hero image), 8 directions, transparent background. Then animate "walk" per direction. PixelLab sizes are mostly square (48/64/85/113/128/168…); pick the canvas where the figure is about 90 px tall, or export at 2x and import with `--scale 2`.
+- Import: `python tools/asset-pipeline/import_sprites.py <pixellab_export_dir> assets/concepts/trainer-gate02-r01/female [--scale N]` places each direction on the 64x96 canvas (feet on y=93, centred, same offset for all frames of a direction), then run the §8 checks.
+- PixelLab output is still a draft. Fix the ponytail side, the skirt/shorts read and the outline style by hand (Aseprite + PixelLab extension) before owner review.
