@@ -407,6 +407,86 @@
    "file": "assets/characters/trainer/layers_v3/female/shoes.webp",
    "lossless_roundtrip_exact": true,
    "bytes": 2024
+  },
+  {
+   "id": "trainer.v3.male.base_body_full",
+   "slot": "base_body",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/base_body_full.webp",
+   "completes": "trainer.v3.male.base_body",
+   "bytes": 4766
+  },
+  {
+   "id": "trainer.v3.male.hair_full",
+   "slot": "hair",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/hair_full.webp",
+   "completes": "trainer.v3.male.hair",
+   "bytes": 7770
+  },
+  {
+   "id": "trainer.v3.male.top_full",
+   "slot": "top",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/top_full.webp",
+   "completes": "trainer.v3.male.top",
+   "bytes": 3600
+  },
+  {
+   "id": "trainer.v3.male.bottom_full",
+   "slot": "bottom",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/bottom_full.webp",
+   "completes": "trainer.v3.male.bottom",
+   "bytes": 1548
+  },
+  {
+   "id": "trainer.v3.female.base_body_full",
+   "slot": "base_body",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/base_body_full.webp",
+   "completes": "trainer.v3.female.base_body",
+   "bytes": 4958
+  },
+  {
+   "id": "trainer.v3.female.hair_full",
+   "slot": "hair",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/hair_full.webp",
+   "completes": "trainer.v3.female.hair",
+   "bytes": 9210
+  },
+  {
+   "id": "trainer.v3.female.top_full",
+   "slot": "top",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/top_full.webp",
+   "completes": "trainer.v3.female.top",
+   "bytes": 4096
+  },
+  {
+   "id": "trainer.v3.female.bottom_full",
+   "slot": "bottom",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/bottom_full.webp",
+   "completes": "trainer.v3.female.bottom",
+   "bytes": 3408
   }
  ],
  "frames": {

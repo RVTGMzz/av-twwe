@@ -137,7 +137,7 @@
       "count": 22,
       "metadata": "assets/characters/trainer/metadata/trainer_v3_layers.json",
       "task": "ART-003-G03",
-      "notes": "Visible-pixel layers, 8-direction atlases per gender and slot. 16/16 pixel-exact recombination, all lossless round trips exact. Covered areas are not painted yet (phase 2)."
+      "notes": "Phase 1 visible-pixel layers plus phase 2 *_full layers (base_body, hair, top, bottom) with covered areas painted by Codex gpt-6.2-sol: 38,337 px added, verify-full 0 problems, approved composite unchanged. Editable sources: assets/characters/trainer/full_src/. Pending owner review."
     }
   ]
 }

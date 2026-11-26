@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 014 — GATE 03 phase 2 covered-area layers (2026-11-26)
+- separate_layers.py export-full/verify-full; Codex painted the covered areas for base_body, hair, top and bottom (38,337 px), with 0 verification problems and the approved composite unchanged. Skin-swap test previews added. Pending owner review.
+
 ## Checkpoint 013 — Halo clean-up (2026-11-26)
 - Removed light background-halo edge pixels (white specks), mainly on the male sprites: 163 px recoloured to existing outline colours. Sprites, previews and layers regenerated; 16/16 TECH-PASS and pixel-exact.
 

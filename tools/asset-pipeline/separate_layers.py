@@ -11,6 +11,8 @@ Workflow (image processing only, the approved pixels are never redrawn):
 Usage (repo root):
   python tools/asset-pipeline/separate_layers.py label [--force]   # only creates missing label maps
   python tools/asset-pipeline/separate_layers.py split
+  python tools/asset-pipeline/separate_layers.py export-full   # phase 2: seed full_src/ PNGs to extend
+  python tools/asset-pipeline/separate_layers.py verify-full   # phase 2: check + pack *_full atlases
 
 Limitation: a flat sprite has no pixels hidden behind clothes, hair or gear. Layers produced here are
 VISIBLE-PIXEL layers: they recombine exactly, but swapping one garment for another needs the covered
@@ -260,7 +262,106 @@ def cmd_split():
     sys.exit(0 if n_ok == 16 and all(v['lossless_roundtrip_exact'] for v in meta['variants']) else 1)
 
 
+# ------------------------------------------------------------------ phase 2: covered-area completion
+FULL_SLOTS = ['base_body', 'hair', 'top', 'bottom']
+FULL_SRC = os.path.join(ROOT, 'assets', 'characters', 'trainer', 'full_src')
+
+
+def layer_cell(gname, slot, i):
+    path = os.path.join(ROOT, OUT_LAYERS, gname, slot + '.webp')
+    if not os.path.exists(path):
+        return Image.new('RGBA', CANVAS)
+    return Image.open(path).convert('RGBA').crop((i * CANVAS[0], 0, (i + 1) * CANVAS[0], CANVAS[1]))
+
+
+def cmd_export_full(force):
+    """Seed editable per-direction PNGs (copies of the phase 1 layers) that artists/Codex extend."""
+    for g, gname in GENDERS.items():
+        for slot in FULL_SLOTS:
+            for i, d in enumerate(DIRS):
+                out = os.path.join(FULL_SRC, gname, '%s_%s.png' % (slot, d))
+                if os.path.exists(out) and not force:
+                    continue
+                os.makedirs(os.path.dirname(out), exist_ok=True)
+                layer_cell(gname, slot, i).save(out)
+    print('seeded', os.path.relpath(FULL_SRC, ROOT))
+
+
+def cmd_verify_full():
+    """Check completed layers: visible pixels unchanged, new pixels only where a later layer covers them,
+    recombination still exact; pack *_full atlases and write a skin-swap preview."""
+    os.makedirs(QA_DIR, exist_ok=True)
+    problems, added = [], {}
+    swap_rows = []
+    meta_path = os.path.join(ROOT, META)
+    meta = json.load(open(meta_path))
+    meta['variants'] = [v for v in meta['variants'] if not v['id'].endswith('_full')]
+    for g, gname in GENDERS.items():
+        atl = {s: Image.new('RGBA', (CANVAS[0] * 8, CANVAS[1])) for s in FULL_SLOTS}
+        row = Image.new('RGBA', (CANVAS[0] * 8 * 4, CANVAS[1]), (58, 74, 62, 255))
+        for i, d in enumerate(DIRS):
+            order = RENDER_ORDER[DIR_GROUP[d.upper()]]
+            base = {s: layer_cell(gname, s, i) for s, _ in LABELS if s}
+            full = dict(base)
+            for slot in FULL_SLOTS:
+                fp = os.path.join(FULL_SRC, gname, '%s_%s.png' % (slot, d))
+                if os.path.exists(fp):
+                    full[slot] = Image.open(fp).convert('RGBA')
+            for slot in FULL_SLOTS:
+                f, b = full[slot].load(), base[slot].load()
+                later = [s for s in order[order.index(slot) + 1:] if s in base]
+                n = 0
+                for y in range(CANVAS[1]):
+                    for x in range(CANVAS[0]):
+                        fa, ba = f[x, y], b[x, y]
+                        if fa[3] not in (0, 255):
+                            problems.append('%s %s %s soft alpha at %d,%d' % (gname, d, slot, x, y)); continue
+                        if ba[3]:
+                            if fa != ba:
+                                problems.append('%s %s %s changed visible pixel %d,%d' % (gname, d, slot, x, y))
+                            continue
+                        if fa[3]:
+                            n += 1
+                            if not any(base[s].getpixel((x, y))[3] for s in later):
+                                problems.append('%s %s %s added pixel %d,%d is not covered by a later layer' % (gname, d, slot, x, y))
+                added['%s_%s_%s' % (g, d, slot)] = n
+                atl[slot].alpha_composite(full[slot], (i * CANVAS[0], 0))
+            comp = Image.new('RGBA', CANVAS)
+            for s in order:
+                if s in full:
+                    comp.alpha_composite(full[s])
+            spr = Image.open(os.path.join(SRC, 'trainer_%s_%s_64x96.png' % (g, d))).convert('RGBA')
+            if comp.tobytes() != spr.tobytes():
+                problems.append('%s %s recombination differs from approved sprite' % (gname, d))
+            # skin-swap preview: body only | body+bottom+top | + hair (no goggles, ribbon, scarf, gear) | full sprite
+            stages = [['base_body', 'face'], ['base_body', 'face', 'bottom', 'top'], ['base_body', 'face', 'bottom', 'shoes', 'top', 'hair'], order]
+            for k, st in enumerate(stages):
+                im = Image.new('RGBA', CANVAS)
+                for s in order:
+                    if s in st and s in full:
+                        im.alpha_composite(full[s])
+                row.alpha_composite(im, (k * CANVAS[0] * 8 + i * CANVAS[0], 0))
+        swap_rows.append(row)
+        for slot in FULL_SLOTS:
+            rel = '%s/%s/%s_full.webp' % (OUT_LAYERS, gname, slot)
+            atl[slot].save(os.path.join(ROOT, rel), 'WEBP', lossless=True, quality=100, method=6, exact=True)
+            meta['variants'].append({'id': 'trainer.v3.%s.%s_full' % (gname, slot), 'slot': slot, 'presets': [gname], 'file': rel,
+                                     'completes': 'trainer.v3.%s.%s' % (gname, slot), 'bytes': os.path.getsize(os.path.join(ROOT, rel))})
+    json.dump(meta, open(meta_path, 'w'), indent=1)
+    sheet = Image.new('RGBA', (swap_rows[0].width, CANVAS[1] * 2))
+    for r, row in enumerate(swap_rows):
+        sheet.alpha_composite(row, (0, r * CANVAS[1]))
+    sheet.resize((sheet.width * 2, sheet.height * 2), Image.NEAREST).save(os.path.join(QA_DIR, 'skin_swap_test_2x.png'))
+    json.dump({'problems': problems[:500], 'problem_count': len(problems), 'added_pixels': added}, open(os.path.join(QA_DIR, 'full_report.json'), 'w'), indent=1)
+    print('added pixels total %d; problems %d; preview build/asset-pipeline/qa/gate03/skin_swap_test_2x.png' % (sum(added.values()), len(problems)))
+    for p in problems[:15]:
+        print('  ', p)
+    sys.exit(0 if not problems else 1)
+
+
 if __name__ == '__main__':
-    if len(sys.argv) < 2 or sys.argv[1] not in ('label', 'split'):
+    cmds = {'label': lambda: cmd_label('--force' in sys.argv), 'split': cmd_split,
+            'export-full': lambda: cmd_export_full('--force' in sys.argv), 'verify-full': cmd_verify_full}
+    if len(sys.argv) < 2 or sys.argv[1] not in cmds:
         sys.exit(__doc__)
-    cmd_label('--force' in sys.argv) if sys.argv[1] == 'label' else cmd_split()
+    cmds[sys.argv[1]]()
