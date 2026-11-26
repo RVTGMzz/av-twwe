@@ -1,0 +1,10 @@
+# CP007 — Preliminary name screening
+2026-11-26. Public web search, not legal clearance or exhaustive search. Existing brand issue remains open. No claim of exclusive names or non-infringement. All roster names provisional.
+- Pebblit: exact creature use https://play.google.com/store/apps/details?id=com.engineerm8.com.pocketwilds and https://falvey.itch.io/pocket-tamers-10-animated-32x32-monster-tamer-creatures-40-animation-strips; replace working display label with Cairnib candidate, same stable ID.
+- Sproutail: creature name in https://vellymon.game/guide/cinderling and https://githubhelp.com/xnt/tiny-creatures; replace with descriptive Leaf fox for now.
+- Slimeberry: usage https://horrorvale.wiki.gg/wiki/Slimes ; replace with Dewmello candidate.
+- Moffi/Peepi families: prior visual and naming concerns remain, keep temporary labels pending targeted review. Chicken concept may require distinct visual refinements; no commercial asset production approval.
+- Mothimble and Skyravel appear on name suggestion pages https://www.gamerbolt.com/cool-discord-names/ and https://decidelooms.com/fantasy-male-names/ ; not proof of conflicting rights but review before lock.
+- Rejected candidate Auralith already a game https://playauralith.com/press/ ; Rimewhisk Pokemon fan OC https://www.gentube.app/gen-oc/character/o8zhvmdbkk ; HushQuill software https://hushquill.com/ ; Nacreloom Minecraft mod content https://modrinth.com/project/viscous-void ; not used in roster.
+- Other candidates received limited exact-string/group query screening where applicable; absence of useful results is not clearance. Descriptive labels Frost shuttle, Reed barge, Mirror heron, Walking observatory, Tide archive, Leaf fox not brand candidates.
+Before approval: exact and similar spelling/phonetics, official trademark registers (target territories/classes), game stores, creature catalogs, image similarity and provenance. Professional review before commercial release. No actual patent claim analysis here. Stable ID persists if label changes.
