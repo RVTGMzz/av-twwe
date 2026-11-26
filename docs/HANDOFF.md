@@ -15,7 +15,7 @@ Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/
 - GATE 03 phase 2 done (pending owner review): `*_full` layers for base_body/hair/top/bottom; verify-full 0 problems; skin-swap test images are in `assets/characters/trainer/metadata/`.
 - 2026-11-26: the owner reported the missing backpack in male W/E; Codex added it (+159/+164 px), all checks pass.
 - Owner approved GATE 03 and started GATE 04 (2026-11-26). Idle is built by `tools/asset-pipeline/animate.py idle` (4 frames, all layers; pending review). Walk pilot (male S, 6 frames) assigned to Codex; see docs/tasks/ART-003-G04.md.
-- Walk pilot delivered: `assets/characters/trainer/anim_src/walk/male/` (6 frames + GIF), all checks pass, pending owner review; it must be rebased on the post-halo sprite.
+- Walk v2 (male S + E) delivered after owner motion feedback: `assets/characters/trainer/anim_src/walk/male/`, all checks pass, pending owner review. The owner's motion reference is a commercial sprite sheet: it is kept only in `build/motion-ref/` (not in Git) and is never traced.
 - Next action: owner reviews the idle GIFs and the walk pilot; then walk for all 16 directions, labelled and split like GATE 03. Codex runs via `%LOCALAPPDATA%/OpenAI/Codex/bin/<hash>/codex.exe exec -m gpt-6.2-sol -s workspace-write`; tell it to use `C:\Program Files\Python38\python.exe`, which has Pillow.
 
 ## White-speck QA (mandatory)
