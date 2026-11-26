@@ -1,0 +1,12 @@
+You are Codex on Aevoria (repo = current directory, branch feature/modular-trainer). Claude Code is tech lead and will review and commit. NO git commands. Use "C:\Program Files\Python38\python.exe" (Pillow installed; no installs). Another Codex run works on the other gender at the same time: only touch the files listed below.
+
+Read docs/tasks/ART-003-G04.md completely (owner motion feedback, walk v2 notes, the "Walk E fix" rule). The owner-approved style reference for motion is the MALE walk already done: assets/characters/trainer/anim_src/walk/male/s_f0..5.png and e_f0..5.png. Match its quality, timing and mechanics. The motion reference build/motion-ref/owner_motion_reference.png is copyrighted: study motion only, never copy its pixels.
+
+Walk cycle per direction, 6 frames: f0 = approved sprite (byte-identical copy of assets/concepts/trainer-gate02/trainer_{g}_{dir}_64x96.png), f1 contact (near leg leads), f2 passing (body +1 px up), f3 transition, f4 contact (far leg leads), f5 passing. Mechanics:
+- Boots always point in the walking direction. On contact the front foot is heel down, toe up; the back foot is heel up, pushing off from the toe. The planted foot slides backward over the cycle (never forward).
+- Near and far legs clearly alternate between f1 and f4. Arms swing opposite to the legs with a visible arc (hands move 2-4 px).
+- Front views (S, SW, SE): the stepping leg is longer/lower and the other boot is raised. Back views (N, NW, NE): the same, but you see the heels and soles of the lifting foot. Diagonals mix the side stride with the front/back read.
+- Head, hair, goggles, scarf, pack/ribbon ride with the body (move them as whole pieces); only redraw legs, boots, arms/gloves/sleeves and small cloth folds (the female skirt hem may sway 1 px).
+Pixel rules: 64x96, hard alpha, at most 48 colours, existing palette, selective outline, planted boots on the same ground line as f0, nothing touching the canvas edge, no white specks.
+
+Verify for your files: "C:\Program Files\Python38\python.exe" tools/asset-pipeline/check_master.py <your files> → all TECH-PASS and halo 0 (mandatory, see docs/art-pipeline.md). Make one GIF per direction (4x, background #14161c, 130,100,110,130,100,110 ms) and a 4x contact sheet (rows = directions, columns = frames) in your scratch folder. LOOK at every GIF and confirm per direction: toes point the walking way, the back foot pushes off, the legs alternate, there is no backwards read and no off-model frame. Final message: per direction one honest line and the check results.

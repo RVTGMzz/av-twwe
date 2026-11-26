@@ -1,0 +1,11 @@
+You are Codex on Aevoria (repo = current directory, branch feature/modular-trainer). Claude Code is tech lead and will review and commit. NO git commands. Use "C:\Program Files\Python38\python.exe" for Python (Pillow installed; do not install packages). Scratch: build/codex-walk/.
+
+Read docs/tasks/ART-003-G04.md, section "Walk pilot". Task: draw a 6-frame WALK cycle for the MALE trainer facing S (toward camera), as a pilot for owner review.
+
+Source: assets/concepts/trainer-gate02/trainer_m_s_64x96.png (owner-approved; attached preview: male top row, first column = S). Its layers and label map, if useful: assets/characters/trainer/layers_v3/male/*.webp (cell 0 = S), assets/characters/trainer/labels/trainer_m_s_labels.png.
+
+Write: assets/characters/trainer/anim_src/walk/male/s_f0.png ... s_f5.png (64x96 RGBA, fully composited character). Frames: f0 contact (right foot forward), f1 down, f2 passing, f3 contact (left foot forward), f4 down, f5 passing. In a front view "forward foot" means slightly lower/larger boot and the other boot slightly raised/shorter; knees bend on down frames; the body bobs up 1 px on passing frames; arms/gloves counter-swing a few pixels; the pack and scarf may shift 1 px.
+Hard requirements: keep head, face, hair, goggles, scarf, outfit and pack design pixel-identical where they are not moving (shift whole parts instead of redrawing them); only redraw legs, boots, arms/gloves and small cloth folds needed by the motion. Same palette and selective outline style, hard alpha, at most 48 colours, no blur, nothing touching the canvas edge, feet resting on the same ground line as the source (bottom of boots at y=93 on contact frames), character centred like the source. Do not change the approved source file.
+
+You may use your image tool to explore poses, but the final frames must be clean pixel art on the exact grid.
+Verify: run "C:\Program Files\Python38\python.exe" tools/asset-pipeline/check_master.py assets/characters/trainer/anim_src/walk/male/*.png (all TECH-PASS); build build/codex-walk/walk_m_s_6x.png (6 frames side by side, 6x) and build/codex-walk/walk_m_s.gif (100 ms per frame, 4x); LOOK at both and judge honestly whether the motion reads as a walk without wobbling or off-model frames. Final message: what changed per frame, check results, honest notes.

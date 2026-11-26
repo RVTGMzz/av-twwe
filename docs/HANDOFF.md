@@ -15,6 +15,13 @@ Owner decision 2026-11-26: Claude Code pauses sprite creation. ChatGPT (cloud) c
 - Tools: `tools/asset-pipeline/README.md`. QA procedure: `docs/art-pipeline.md` (halo, gap, flicker, carve). Decisions: `docs/DECISIONS.md` (D016–D021).
 - Still missing for Batch 01: Aevin item, Bond FX and a test mount (only rejected prototypes exist); run/faint/bond/ride animations; covered-area layers for walk.
 
+### Machine retirement note (2026-11-26)
+The Windows machine used by Claude Code for checkpoints 005–023 is being retired. Everything needed is on GitHub on this branch. Not in Git on purpose:
+- `build/`: regenerable outputs, QA sheets and scratch (rebuild with the commands in `tools/asset-pipeline/README.md`).
+- The owner's commercial motion-reference sheet (copyright; the owner keeps it).
+- Local tool setup: Codex CLI config and the PixelLab token (never in Git). Codex prompts used so far: `docs/agent-prompts/`.
+On Windows clones run `git config core.longpaths true` (some asset paths are long). Requirements: Node 18+, Python 3.8+ with Pillow (WebP).
+
 ## History (newest first)
 ## Trainer gap cleanup for Claude Code review (2026-11-26)
 - Codex recoloured light gap pixels in approved male S/N/SE and female S sprites under `assets/concepts/trainer-gate02/` (43 px). Walk sources under `assets/characters/trainer/anim_src/walk/` changed in those directions and female NW (120 px in 23 PNGs, including 43 px in the matching f0 files). The male N patch covers the full visible streak, including clustered pixels the detector missed.
