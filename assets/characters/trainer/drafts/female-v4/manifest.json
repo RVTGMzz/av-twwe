@@ -1,0 +1,77 @@
+{
+  "status": "draft_not_direction_approved",
+  "source": "owner-liked ChatGPT direction sheet 2644f840-4bfb-4b29-b56e-9b6d82154271",
+  "source_sha256": "ac6c2f4df9200c7256d2b84cf327da1433c3ee12d586e688f9e2d050b5e5bad0",
+  "canvas": [
+    64,
+    96
+  ],
+  "pivot": [
+    32,
+    94
+  ],
+  "ground_y": 93,
+  "uniform_scale": 0.21844660194174756,
+  "palette_max_opaque": 47,
+  "alpha": [
+    0,
+    255
+  ],
+  "missing": [
+    "sw"
+  ],
+  "alternate": [
+    "se_alt"
+  ],
+  "height_range": [
+    87,
+    91
+  ],
+  "sprites": [
+    {
+      "file": "trainer_f_e_64x96.webp",
+      "bytes": 1600,
+      "git_blob_sha": "3ea3827b98ef4d30beb84dba99f3b800c3a7ebaf"
+    },
+    {
+      "file": "trainer_f_n_64x96.webp",
+      "bytes": 1800,
+      "git_blob_sha": "e1b7cb74ab0fc234bb4361d60224db999f1b587f"
+    },
+    {
+      "file": "trainer_f_ne_64x96.webp",
+      "bytes": 1724,
+      "git_blob_sha": "70035c81b8f45f7c53070bcc6d5b28c77c0cdbc8"
+    },
+    {
+      "file": "trainer_f_nw_64x96.webp",
+      "bytes": 1638,
+      "git_blob_sha": "58ebeabb34b479602ea6f3bccd0b7c04e7aa7cbb"
+    },
+    {
+      "file": "trainer_f_s_64x96.webp",
+      "bytes": 1902,
+      "git_blob_sha": "76cd61c5d09d78e6620ef767e15adbb3b1cfca0a"
+    },
+    {
+      "file": "trainer_f_se_64x96.webp",
+      "bytes": 1922,
+      "git_blob_sha": "5f175ccd440095083b65ede92ca4cbdb2ac13289"
+    },
+    {
+      "file": "trainer_f_se_alt_64x96.webp",
+      "bytes": 1898,
+      "git_blob_sha": "50bbe3fa578d8c04ffde5d21a688ff6ab64b77cf"
+    },
+    {
+      "file": "trainer_f_w_64x96.webp",
+      "bytes": 1566,
+      "git_blob_sha": "36cd63f4a227379de88f2ba757825659a611410e"
+    }
+  ],
+  "notes": [
+    "All WebP verified pixel-exact to corresponding local PNG.",
+    "Source appearance approved, not directional geometry or runtime quality. SW missing, two SE variants; do not flip asymmetric hair.",
+    "NW and NE ponytail side and head/body direction require review. No animation or layer separation. Do not overwrite active trainer assets."
+  ]
+}
