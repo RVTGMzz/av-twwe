@@ -59,3 +59,6 @@ The owner reported white specks on the male sprites. Light grey edge pixels left
 
 ## Male side-view backpack (Codex gpt-6.2-sol, 2026-11-26)
 The owner reported that the backpack disappeared when the male turns left or right; this was inherited from the concept board. Codex added the same bedroll pack behind his back in `trainer_m_w` (+159 px) and `trainer_m_e` (+164 px), matching NW/N/NE. New pixels were placed only where the sprite was transparent and use existing colours; label maps were updated (index 11). Checks: 16/16 TECH-PASS, split 16/16 pixel-exact, verify-full 0 problems. Preview: `backpack_side_fix_4x.png`.
+
+## Halo clean-up pass 2 (Claude Code, 2026-11-26)
+The owner still saw white specks. `clean_halo.py` now also catches slightly warm light edge pixels (rule A: saturation < 0.35 and lighter than the inner mean by 0.08; rule B: value > 0.62 and lighter than every inner neighbour by 0.18). 233 pixels were recoloured to existing dark outline colours, and the matching pixels in `assets/characters/trainer/full_src/` were synced. A re-run finds 0. Checks: 16/16 TECH-PASS, split 16/16 pixel-exact, verify-full 0 problems; idle rebuilt. Dark-background check: `dark_bg_check_4x.png`.

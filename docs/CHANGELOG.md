@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 017 — Halo clean-up pass 2 (2026-11-26)
+- 233 more light edge specks recoloured (broader detector), full_src synced, layers and idle rebuilt; all checks pass. Note: the male S walk pilot started from the pre-fix sprite.
+
 ## Checkpoint 016 — GATE 04 idle (2026-11-26)
 - GATE 03 approved (D020). animate.py builds a 4-frame waist-squash idle for every layer, 8 directions, both genders; previews and GIFs are in metadata/. Walk pilot assigned to Codex.
 
