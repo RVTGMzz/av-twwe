@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 022 — Female redraw brief (2026-11-26)
+- D021: no more sprite drawing by Codex/Claude. Added an external brief for the female trainer redraw (direction master + walk, layer delivery, technical specs, acceptance checks) with a reference sheet.
+
 ## Checkpoint 021 — Trainer V3 viewer (2026-11-26)
 - New offline viewer `tools/asset-pipeline/viewer_v3/` for the approved V3 layers, idle and walk: direction, speed, background, pivot, covered-area toggle, per-layer outfit test. Tested in a browser, no console errors.
 
