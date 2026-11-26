@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 020 — Transparent leg gaps (2026-11-26)
+- carve_gaps.py: the enclosed board background between the legs is now transparent in the approved sprites and walk frames (693 px); labels, covered-area sources, layers, idle and walk rebuilt; all checks pass.
+
 ## Trainer direction and walk gap cleanup (2026-11-26)
 - Recoloured 43 pixels in approved direction sprites and 120 in walk sources using existing palette colours. Covered-area sources were synced. Gap candidates dropped from 127 to 78 reviewed details. All 112 source images pass with halo 0, direction layers recombine 16/16, verify-full reports 0 problems, and idle and walk layers were rebuilt (walk 96/96 pixel-exact). Pending Claude Code review.
 
