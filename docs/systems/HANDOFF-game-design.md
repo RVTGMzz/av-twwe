@@ -5,3 +5,6 @@ Next: owner reviews core; combat & skill model (damage, cooldowns, range, status
 
 ## CP006 — 2026-11-26
 Combat rules, 8 starter skills, design and test source committed. 6183 design-side JS checks passed, mature benchmark gap 0.4%. Node/CI and engine untested. Next: review numbers, Kin Atlas with stable IDs and name clearance, expanded scenario QA. Trainer and main untouched.
+
+## CP007 — 2026-11-26
+24 candidate families, 28 forms, all 12 Aspects, 5 roles, 6 origins; stable species/form IDs and legacy aliases. 268 design-side JS schema/reference checks passed; Node/CI not run. Names provisional; see name-screening.md. No new images/sprites/engine work. Next: owner reviews roster, then small visual batch and signature/trait/encounter data, or world map habitat design in parallel. Trainer/main untouched.
