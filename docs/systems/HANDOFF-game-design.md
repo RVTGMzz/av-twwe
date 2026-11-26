@@ -8,3 +8,6 @@ Combat rules, 8 starter skills, design and test source committed. 6183 design-si
 
 ## CP007 — 2026-11-26
 24 candidate families, 28 forms, all 12 Aspects, 5 roles, 6 origins; stable species/form IDs and legacy aliases. 268 design-side JS schema/reference checks passed; Node/CI not run. Names provisional; see name-screening.md. No new images/sprites/engine work. Next: owner reviews roster, then small visual batch and signature/trait/encounter data, or world map habitat design in parallel. Trainer/main untouched.
+
+## CP007.1 — 2026-11-26
+Owner approved both Kin visual boards. Archived exact WebP files under assets/concepts/ (Kin Atlas 01 and Starter Duo 02). See [kin-concept-approval.md](kin-concept-approval.md) for hashes, annotation discrepancies, and production gates. Visual approval only; gameplay data unchanged. Trainer/main untouched.
