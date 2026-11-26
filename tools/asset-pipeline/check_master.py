@@ -2,7 +2,8 @@
 
 Usage (repo root):
   python tools/asset-pipeline/check_master.py assets/concepts/trainer-gate01/*.png
-Checks each master sprite: allowed canvas (48x64, 64x80, 64x96), transparent background, hard alpha
+Checks each master sprite: allowed canvas (48x64, 64x80, 64x96), transparent background, no light halo/white
+specks on the silhouette edge (clean_halo.find_halo), hard alpha
 (0/255 only, no anti-aliased fringe), palette size, no stray single pixels on the silhouette edge.
 Writes build/asset-pipeline/qa/gate01_review.png (1x and 4x, nearest-neighbour) and gate01_report.json.
 """
@@ -11,6 +12,9 @@ import os
 import sys
 
 from PIL import Image, ImageDraw
+
+sys.path.insert(0, os.path.dirname(__file__))
+from clean_halo import find_halo  # noqa: E402  (white-speck / background-halo rule)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 ALLOWED = {(48, 64), (64, 80), (64, 96)}  # 64x96 = V3 board recommendation
@@ -38,10 +42,12 @@ def check(path):
         'hard_alpha_only': alphas <= {0, 255},
         'colour_count': len(colours), 'colour_count_ok': len(colours) <= MAX_COLOURS,
         'isolated_pixels': strays, 'bbox': list(bbox) if bbox else None,
+        'halo_specks': len(find_halo(im)),
         'touches_canvas_edge': bool(bbox and (bbox[0] == 0 or bbox[1] == 0 or bbox[2] == w or bbox[3] == h)),
     }
     res['pass_technical'] = all([res['canvas_allowed'], res['transparent_background'], res['hard_alpha_only'],
-                                 res['colour_count_ok'], strays == 0, not res['touches_canvas_edge']])
+                                 res['colour_count_ok'], strays == 0, not res['touches_canvas_edge'],
+                                 res['halo_specks'] == 0])
     return im, res
 
 
@@ -53,12 +59,12 @@ def main(paths):
         im, r = check(p)
         results.append(r)
         ims.append(im)
-        print('TECH-PASS' if r['pass_technical'] else 'TECH-FAIL', r['file'], r['size'], 'colours', r['colour_count'])
+        print('TECH-PASS' if r['pass_technical'] else 'TECH-FAIL', r['file'], r['size'], 'colours', r['colour_count'], 'halo', r['halo_specks'])
     # review sheet: each master at 1x, then 4x
     pad, sc = 8, 4
     cw = max(i.width for i in ims) * (1 + sc) + pad * 3
     ch = max(i.height for i in ims) * sc + pad * 2 + 14
-    sheet = Image.new('RGBA', (cw, ch * len(ims)), (58, 74, 62, 255))
+    sheet = Image.new('RGBA', (cw, ch * len(ims)), (20, 22, 28, 255))  # dark: white specks are visible
     dr = ImageDraw.Draw(sheet)
     for n, im in enumerate(ims):
         y = n * ch

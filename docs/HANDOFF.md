@@ -17,6 +17,9 @@ Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/
 - Owner approved GATE 03 and started GATE 04 (2026-11-26). Idle is built by `tools/asset-pipeline/animate.py idle` (4 frames, all layers; pending review). Walk pilot (male S, 6 frames) assigned to Codex; see docs/tasks/ART-003-G04.md.
 - Next action: owner reviews the idle GIFs and the walk pilot; then walk for all 16 directions, labelled and split like GATE 03. Codex runs via `%LOCALAPPDATA%/OpenAI/Codex/bin/<hash>/codex.exe exec -m gpt-6.2-sol -s workspace-write`; tell it to use `C:\Program Files\Python38\python.exe`, which has Pillow.
 
+## White-speck QA (mandatory)
+The owner reported white specks twice. Every sprite/frame must pass `check_master.py` (halo 0) and a dark-background review before commit; procedure in docs/art-pipeline.md.
+
 ## Owner verdict this session (binding — D016, D017)
 - The procedural trainer sprites Claude Code generated with scripts are **NOT approved artistically** (v1 too chibi/bobblehead; v2 too thin, long and stiff). Do not reuse them as a design base. They are not in Git.
 - Stop bulk animation. Work in gates with owner approval each time: GATE 01 character master → GATE 02 eight directions → GATE 03 modular separation → GATE 04 animation.
