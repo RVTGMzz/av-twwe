@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 023 — Handoff to ChatGPT for sprite work (2026-11-26)
+- Claude Code pauses sprite creation; HANDOFF now starts with a START HERE section for the next agent (female redraw brief, references, rules, delivery, QA).
+
 ## Checkpoint 022 — Female redraw brief (2026-11-26)
 - D021: no more sprite drawing by Codex/Claude. Added an external brief for the female trainer redraw (direction master + walk, layer delivery, technical specs, acceptance checks) with a reference sheet.
 

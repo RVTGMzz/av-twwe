@@ -1,8 +1,21 @@
 # AV-TWWE — Current handoff
-Checkpoint 005 | 2026-11-25 | Pre-production
-Active branch: **feature/modular-trainer** (read this file on that branch, not main). Last implementation commit: 8745215 (asset pipeline). Handoff/docs commit follows it; use `git log -1` + `git ls-remote origin` for the real head.
-Active task: **ART-003-G04 — Trainer Animation (GATE 04)**, docs/tasks/ART-003-G04.md. Full owner requirements: docs/tasks/ART-003-spec.md. ART-003-B01 is ON HOLD.
+Checkpoint 023 | 2026-11-26 | Pre-production | Branch **feature/modular-trainer** (newest work is here, NOT on main; nothing merged)
 
+## START HERE — next agent (ChatGPT / GPT cloud), sprite work
+Owner decision 2026-11-26: Claude Code pauses sprite creation. ChatGPT (cloud) continues the **female trainer redraw**; Claude Code/Codex do not draw art (D021).
+1. **Task:** `docs/briefs/ART-003-R01-female-trainer-redraw.md`. Phase A first: 8 standing directions, 64x96, transparent; owner approval; then Phase B: walk 6 frames x 8 directions.
+2. **References:** `docs/briefs/female_redraw_reference.png` (A = approved male sprites for scale and style, B = approved female design) and `assets/concepts/trainer-master-v3.webp` (owner-approved board, option A). Do NOT use the current female sprites as a base: they are flagged for redraw.
+3. **Hard rules:** ponytail and blue ribbon always on HER RIGHT side; never mirror directions; ~3.25 heads; hard alpha, ≤48 colours, no anti-aliasing; transparent background including the space between the legs; feet on y=93; no white specks on outlines.
+4. **Delivery:** put PNGs in `assets/concepts/trainer-gate02-r01/female/` named per brief §7 (layers per brief §6 if possible), or give them to the owner. Then run, or ask Claude Code to run: `python tools/asset-pipeline/import_sprites.py <dir> <dest>` (only if the canvas is not 64x96), `check_master.py`, `check_gaps.py`, `check_flicker.py` (walk), and view everything in `tools/asset-pipeline/viewer_v3/index.html` on a dark background.
+5. Do not merge to main, do not force push, never commit API tokens (e.g. a PixelLab token).
+
+### Current state (verified 2026-11-26, last implementation commit 7e656f8)
+- Male trainer V3: 8 directions (`assets/concepts/trainer-gate02/trainer_m_*`), 11 modular layers + covered-area layers, idle 4f, walk 6f x 8; all QA checks pass. Owner re-review is pending.
+- Female trainer V3: same structure exists, but the owner rejected the art (legs/skirt/proportions): redraw per the brief above. After redraw: label (`separate_layers.py`), split, covered areas, idle (`animate.py idle`), walk labels/split (`animate.py walk-label/walk-split`).
+- Tools: `tools/asset-pipeline/README.md`. QA procedure: `docs/art-pipeline.md` (halo, gap, flicker, carve). Decisions: `docs/DECISIONS.md` (D016–D021).
+- Still missing for Batch 01: Aevin item, Bond FX and a test mount (only rejected prototypes exist); run/faint/bond/ride animations; covered-area layers for walk.
+
+## History (newest first)
 ## Trainer gap cleanup for Claude Code review (2026-11-26)
 - Codex recoloured light gap pixels in approved male S/N/SE and female S sprites under `assets/concepts/trainer-gate02/` (43 px). Walk sources under `assets/characters/trainer/anim_src/walk/` changed in those directions and female NW (120 px in 23 PNGs, including 43 px in the matching f0 files). The male N patch covers the full visible streak, including clustered pixels the detector missed.
 - The existing `clean_halo.sync_layers` helper synced 9 matching pixels in `assets/characters/trainer/full_src/`. All 16 approved/f0 pairs match byte for byte. The source alpha and label-map bytes were verified. Every replacement uses a colour from the corresponding source palette.
