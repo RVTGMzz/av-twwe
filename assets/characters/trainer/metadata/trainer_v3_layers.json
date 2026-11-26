@@ -196,7 +196,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/base_body.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 2536
+   "bytes": 2532
   },
   {
    "id": "trainer.v3.male.face",
@@ -216,7 +216,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/hair.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 6308
+   "bytes": 6306
   },
   {
    "id": "trainer.v3.male.headwear",
@@ -226,7 +226,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/headwear.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 2722
+   "bytes": 2708
   },
   {
    "id": "trainer.v3.male.scarf",
@@ -236,7 +236,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/scarf.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 1270
+   "bytes": 1280
   },
   {
    "id": "trainer.v3.male.top",
@@ -246,7 +246,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/top.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 2322
+   "bytes": 2318
   },
   {
    "id": "trainer.v3.male.bottom",
@@ -256,7 +256,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/bottom.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 1110
+   "bytes": 1108
   },
   {
    "id": "trainer.v3.male.gloves",
@@ -266,7 +266,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/gloves.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 1852
+   "bytes": 1850
   },
   {
    "id": "trainer.v3.male.accessories",
@@ -276,7 +276,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/accessories.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 2848
+   "bytes": 2812
   },
   {
    "id": "trainer.v3.male.backpack",
@@ -286,7 +286,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/backpack.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 3026
+   "bytes": 3004
   },
   {
    "id": "trainer.v3.male.shoes",
@@ -296,7 +296,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/shoes.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 3816
+   "bytes": 3776
   },
   {
    "id": "trainer.v3.female.base_body",
@@ -326,7 +326,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/female/hair.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 6742
+   "bytes": 6786
   },
   {
    "id": "trainer.v3.female.hair_ribbon",

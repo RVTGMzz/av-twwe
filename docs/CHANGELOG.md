@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 013 — Halo clean-up (2026-11-26)
+- Removed light background-halo edge pixels (white specks), mainly on the male sprites: 163 px recoloured to existing outline colours. Sprites, previews and layers regenerated; 16/16 TECH-PASS and pixel-exact.
+
 ## Checkpoint 012 — GATE 03 phase 1 layers (2026-11-26)
 - 16 corrected label maps (Codex gpt-6.2-sol); 22 visible-pixel layer atlases with metadata; 16/16 pixel-exact recombination, lossless. Pending owner review.
 

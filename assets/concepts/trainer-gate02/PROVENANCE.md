@@ -53,3 +53,6 @@ No manual repainting, mirroring, regional compositing, or old-sprite patching wa
 | `trainer_f_se_64x96.png` | `trainer_f_se_generated_64x96.png` | Complete generated SE figure; same whole-sprite processing. Ponytail: screen-left. |
 
 Final visual QA lineup: `build/codex-g02/female_final_8x.png`.
+
+## Halo clean-up (Claude Code, 2026-11-26)
+The owner reported white specks on the male sprites. Light grey edge pixels left over from the board background were recoloured to the nearest existing dark palette colour with `python tools/asset-pipeline/clean_halo.py --apply` (163 pixels in total, 155 of them on the male set). No other pixels were changed; the palettes did not grow. A second pass finds 0 halo pixels, and the technical check is 16/16 PASS. Before/after: `halo_fix_m_se_before_after_5x.png`.
