@@ -138,6 +138,16 @@
       "metadata": "assets/characters/trainer/metadata/trainer_v3_layers.json",
       "task": "ART-003-G03",
       "notes": "Phase 1 visible-pixel layers plus phase 2 *_full layers (base_body, hair, top, bottom) with covered areas painted by Codex gpt-6.2-sol: 38,337 px added, verify-full 0 problems, approved composite unchanged. Editable sources: assets/characters/trainer/full_src/. Pending owner review."
+    },
+    {
+      "id": "trainer.v3.anim.idle",
+      "path": "assets/characters/trainer/anim_v3/idle/",
+      "storage_status": "in_repo",
+      "review_status": "pending_owner_review",
+      "format": "webp_lossless",
+      "metadata": "assets/characters/trainer/metadata/trainer_v3_anim_idle.json",
+      "task": "ART-003-G04",
+      "notes": "4-frame waist-squash idle for all layers (incl. *_full), 8 directions, both genders; built by animate.py, no redrawing."
     }
   ]
 }

@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 016 — GATE 04 idle (2026-11-26)
+- GATE 03 approved (D020). animate.py builds a 4-frame waist-squash idle for every layer, 8 directions, both genders; previews and GIFs are in metadata/. Walk pilot assigned to Codex.
+
 ## Checkpoint 015 — Male side-view backpack (2026-11-26)
 - Added the missing bedroll backpack to the male W/E direction sprites and labels; layers re-split; 16/16 TECH-PASS, pixel-exact, verify-full 0 problems.
 

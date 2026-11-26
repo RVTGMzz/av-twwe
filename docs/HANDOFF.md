@@ -14,7 +14,8 @@ Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/
 - 2026-11-26: the owner accepted the female layers and reported white specks on the male. These were background-halo edge pixels; fixed with `clean_halo.py` (163 px, palette-snapped), the GATE 02 sprites updated and the layers re-split (still 16/16 pixel-exact).
 - GATE 03 phase 2 done (pending owner review): `*_full` layers for base_body/hair/top/bottom; verify-full 0 problems; skin-swap test images are in `assets/characters/trainer/metadata/`.
 - 2026-11-26: the owner reported the missing backpack in male W/E; Codex added it (+159/+164 px), all checks pass.
-- Next action: owner reviews the skin-swap test. After approval: GATE 04 animation (idle, walk first), built from these layers. Codex runs via `%LOCALAPPDATA%/OpenAI/Codex/bin/<hash>/codex.exe exec -m gpt-6.2-sol -s workspace-write`; tell it to use `C:\Program Files\Python38\python.exe`, which has Pillow.
+- Owner approved GATE 03 and started GATE 04 (2026-11-26). Idle is built by `tools/asset-pipeline/animate.py idle` (4 frames, all layers; pending review). Walk pilot (male S, 6 frames) assigned to Codex; see docs/tasks/ART-003-G04.md.
+- Next action: owner reviews the idle GIFs and the walk pilot; then walk for all 16 directions, labelled and split like GATE 03. Codex runs via `%LOCALAPPDATA%/OpenAI/Codex/bin/<hash>/codex.exe exec -m gpt-6.2-sol -s workspace-write`; tell it to use `C:\Program Files\Python38\python.exe`, which has Pillow.
 
 ## Owner verdict this session (binding — D016, D017)
 - The procedural trainer sprites Claude Code generated with scripts are **NOT approved artistically** (v1 too chibi/bobblehead; v2 too thin, long and stiff). Do not reuse them as a design base. They are not in Git.

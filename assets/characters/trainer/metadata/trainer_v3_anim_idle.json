@@ -1,0 +1,324 @@
+{
+ "schema_version": 1,
+ "id": "trainer.v3.anim.idle",
+ "task": "ART-003-G04",
+ "status": "pending_owner_review",
+ "method": "waist squash: pixels above the waist line move down 1 px on inhale frames, identical for all layers",
+ "canvas": {
+  "w": 64,
+  "h": 96
+ },
+ "pivot": {
+  "x": 32,
+  "y": 94
+ },
+ "directions": [
+  "S",
+  "SW",
+  "W",
+  "NW",
+  "N",
+  "NE",
+  "E",
+  "SE"
+ ],
+ "frame_count": 4,
+ "durations_ms": [
+  260,
+  200,
+  260,
+  200
+ ],
+ "loop": true,
+ "layout": "row = direction (S,SW,W,NW,N,NE,E,SE), column = frame",
+ "waist_y": {
+  "male_s": 52,
+  "male_sw": 50,
+  "male_w": 52,
+  "male_nw": 58,
+  "male_n": 61,
+  "male_ne": 61,
+  "male_e": 50,
+  "male_se": 53,
+  "female_s": 44,
+  "female_sw": 44,
+  "female_w": 49,
+  "female_nw": 45,
+  "female_n": 46,
+  "female_ne": 41,
+  "female_e": 44,
+  "female_se": 45
+ },
+ "variants": [
+  {
+   "id": "trainer.v3.male.accessories.idle",
+   "slot": "accessories",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/accessories.webp"
+  },
+  {
+   "id": "trainer.v3.male.backpack.idle",
+   "slot": "backpack",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/backpack.webp"
+  },
+  {
+   "id": "trainer.v3.male.base_body.idle",
+   "slot": "base_body",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/base_body.webp"
+  },
+  {
+   "id": "trainer.v3.male.base_body_full.idle",
+   "slot": "base_body",
+   "full": true,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/base_body_full.webp"
+  },
+  {
+   "id": "trainer.v3.male.bottom.idle",
+   "slot": "bottom",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/bottom.webp"
+  },
+  {
+   "id": "trainer.v3.male.bottom_full.idle",
+   "slot": "bottom",
+   "full": true,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/bottom_full.webp"
+  },
+  {
+   "id": "trainer.v3.male.face.idle",
+   "slot": "face",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/face.webp"
+  },
+  {
+   "id": "trainer.v3.male.gloves.idle",
+   "slot": "gloves",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/gloves.webp"
+  },
+  {
+   "id": "trainer.v3.male.hair.idle",
+   "slot": "hair",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/hair.webp"
+  },
+  {
+   "id": "trainer.v3.male.hair_full.idle",
+   "slot": "hair",
+   "full": true,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/hair_full.webp"
+  },
+  {
+   "id": "trainer.v3.male.headwear.idle",
+   "slot": "headwear",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/headwear.webp"
+  },
+  {
+   "id": "trainer.v3.male.scarf.idle",
+   "slot": "scarf",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/scarf.webp"
+  },
+  {
+   "id": "trainer.v3.male.shoes.idle",
+   "slot": "shoes",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/shoes.webp"
+  },
+  {
+   "id": "trainer.v3.male.top.idle",
+   "slot": "top",
+   "full": false,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/top.webp"
+  },
+  {
+   "id": "trainer.v3.male.top_full.idle",
+   "slot": "top",
+   "full": true,
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/male/top_full.webp"
+  },
+  {
+   "id": "trainer.v3.female.accessories.idle",
+   "slot": "accessories",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/accessories.webp"
+  },
+  {
+   "id": "trainer.v3.female.base_body.idle",
+   "slot": "base_body",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/base_body.webp"
+  },
+  {
+   "id": "trainer.v3.female.base_body_full.idle",
+   "slot": "base_body",
+   "full": true,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/base_body_full.webp"
+  },
+  {
+   "id": "trainer.v3.female.bottom.idle",
+   "slot": "bottom",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/bottom.webp"
+  },
+  {
+   "id": "trainer.v3.female.bottom_full.idle",
+   "slot": "bottom",
+   "full": true,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/bottom_full.webp"
+  },
+  {
+   "id": "trainer.v3.female.face.idle",
+   "slot": "face",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/face.webp"
+  },
+  {
+   "id": "trainer.v3.female.gloves.idle",
+   "slot": "gloves",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/gloves.webp"
+  },
+  {
+   "id": "trainer.v3.female.hair.idle",
+   "slot": "hair",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/hair.webp"
+  },
+  {
+   "id": "trainer.v3.female.hair_full.idle",
+   "slot": "hair",
+   "full": true,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/hair_full.webp"
+  },
+  {
+   "id": "trainer.v3.female.hair_ribbon.idle",
+   "slot": "hair_ribbon",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/hair_ribbon.webp"
+  },
+  {
+   "id": "trainer.v3.female.headwear.idle",
+   "slot": "headwear",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/headwear.webp"
+  },
+  {
+   "id": "trainer.v3.female.scarf.idle",
+   "slot": "scarf",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/scarf.webp"
+  },
+  {
+   "id": "trainer.v3.female.shoes.idle",
+   "slot": "shoes",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/shoes.webp"
+  },
+  {
+   "id": "trainer.v3.female.top.idle",
+   "slot": "top",
+   "full": false,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/top.webp"
+  },
+  {
+   "id": "trainer.v3.female.top_full.idle",
+   "slot": "top",
+   "full": true,
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/idle/female/top_full.webp"
+  }
+ ]
+}
