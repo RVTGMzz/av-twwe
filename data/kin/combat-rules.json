@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": {
+    "slow": {
+      "duration": 3,
+      "cap": 0.35
+    },
+    "stun": {
+      "duration": 0.8
+    },
+    "root": {
+      "duration": 1.5
+    },
+    "silence": {
+      "duration": 1.5
+    },
+    "hard_cc_immunity_s": 3,
+    "elite_duration_factor": 0.5,
+    "boss_stagger": {
+      "threshold": 100,
+      "gain": 20,
+      "min_gain_interval_s": 1,
+      "decay_per_s": 10,
+      "quiet_before_decay_s": 1,
+      "duration_s": 2,
+      "immunity_s": 10
+    },
+    "burn": {
+      "duration": 4,
+      "tick_s": 1,
+      "power": 0.12,
+      "crit": false
+    },
+    "shield": {
+      "duration": 5,
+      "cap_hp": 0.25
+    },
+    "guard": {
+      "duration": 3,
+      "cap": 0.3
+    }
+  },
+  "damage": {
+    "defense_constant": 60,
+    "min_hit": 1,
+    "crit_base": 0.05,
+    "crit_cap": 0.35,
+    "crit_multiplier": 1.5,
+    "guard_cap": 0.3,
+    "attack_buff_cap": 0.4,
+    "defense_buff_cap": 0.4,
+    "aspect_source": "data/aspects.json",
+    "aspect_min": 0.75,
+    "aspect_max": 1.25,
+    "stab": false,
+    "rarity_multiplier": false
+  },
+  "control": {
+    "roster_max": 6,
+    "active_kin": 1,
+    "active_slots": 6,
+    "slot_unlock_levels": [
+      1,
+      1,
+      1,
+      10,
+      20,
+      30
+    ],
+    "swap_cooldown_s": 8,
+    "swap_windup_s": 0.5,
+    "recovery_s": 0.25,
+    "leash_tiles": 8,
+    "auto_target": false,
+    "auto_cast": false,
+    "repeat_explicit_basic": true
+  },
+  "environment": {
+    "explicit_interact": true,
+    "tagged_objects_only": true,
+    "capability_separate_from_aspect": true,
+    "alternate_story_route": true
+  }
+}
