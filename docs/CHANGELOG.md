@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 018 — Walk 16 directions (2026-11-26)
+- Male and female 6-frame walk cycles in 8 directions (96 frames), built on the approved sprites; 96/96 TECH-PASS, halo 0. Pending owner review; layer split comes next.
+
 ## Checkpoint 017 — Halo clean-up pass 2 (2026-11-26)
 - 233 more light edge specks recoloured (broader detector), full_src synced, layers and idle rebuilt; all checks pass. Note: the male S walk pilot started from the pre-fix sprite.
 
