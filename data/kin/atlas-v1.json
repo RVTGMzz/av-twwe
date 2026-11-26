@@ -1,0 +1,813 @@
+{
+  "schema_version": 1,
+  "status": "candidate_roster_not_production_or_ip_cleared",
+  "name_policy": "Stable IDs never derived from display name. All labels provisional; descriptive labels are internal only.",
+  "species": [
+    {
+      "id": "kin_0001",
+      "label": "Moffi",
+      "origin": "wildborn",
+      "aspects": [
+        "gale",
+        "lumen"
+      ],
+      "rarity": "common",
+      "role": "ranged_magic",
+      "phase": "starter",
+      "habitat": "frontier_meadow",
+      "condition": "any",
+      "visual_brief": "fluffy cream cloud creature, blue neckerchief, compact limbs",
+      "signature_concept": "Breeze Bolt",
+      "role_tradeoff": "Mobile ranged attacks; vulnerable when cornered",
+      "capabilities": [
+        "clear_mist"
+      ],
+      "legacy_alias": "moffi",
+      "name_status": "review_required",
+      "art_status": "concept_approved_production_pending",
+      "forms": [
+        {
+          "id": "kin_0001_f1",
+          "label": "Moffi",
+          "stage": 1,
+          "ascension_level": null
+        },
+        {
+          "id": "kin_0001_f2",
+          "label": "Mofflu",
+          "stage": 2,
+          "ascension_level": 20
+        },
+        {
+          "id": "kin_0001_f3",
+          "label": "Moffaire",
+          "stage": 3,
+          "ascension_level": 40
+        }
+      ],
+      "skill_ids": [
+        "starter_ranged_basic",
+        "starter_ranged_flare",
+        "starter_ranged_retreat",
+        "starter_ranged_trap"
+      ],
+      "acquisition": "choose_one_then_alternate_family_later_candidate"
+    },
+    {
+      "id": "kin_0002",
+      "label": "Peepi",
+      "origin": "wildborn",
+      "aspects": [
+        "ember",
+        "stone"
+      ],
+      "rarity": "common",
+      "role": "melee_physical",
+      "phase": "starter",
+      "habitat": "frontier_meadow",
+      "condition": "any",
+      "visual_brief": "round chick, red comb; second form comedic bodybuilder, third martial rooster",
+      "signature_concept": "Peck Rush",
+      "role_tradeoff": "Close range pressure; must approach",
+      "capabilities": [
+        "break_fragile_rock"
+      ],
+      "legacy_alias": "peepi",
+      "name_status": "review_required",
+      "art_status": "concept_approved_production_pending",
+      "forms": [
+        {
+          "id": "kin_0002_f1",
+          "label": "Peepi",
+          "stage": 1,
+          "ascension_level": null
+        },
+        {
+          "id": "kin_0002_f2",
+          "label": "Brooster",
+          "stage": 2,
+          "ascension_level": 20
+        },
+        {
+          "id": "kin_0002_f3",
+          "label": "Galladius",
+          "stage": 3,
+          "ascension_level": 40
+        }
+      ],
+      "skill_ids": [
+        "starter_melee_basic",
+        "starter_melee_rush",
+        "starter_melee_slam",
+        "starter_melee_guard"
+      ],
+      "acquisition": "choose_one_then_alternate_family_later_candidate"
+    },
+    {
+      "id": "kin_0003",
+      "label": "Cairnib",
+      "origin": "wildborn",
+      "aspects": [
+        "stone",
+        "grove"
+      ],
+      "rarity": "common",
+      "role": "tank",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "day",
+      "visual_brief": "mossy stone seed with asymmetric stacked shell and sprout",
+      "signature_concept": "Root Brace",
+      "role_tradeoff": "Stationary guard; low mobility",
+      "capabilities": [
+        "break_fragile_rock"
+      ],
+      "legacy_alias": "pebblit",
+      "name_status": "review_required",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0003_f1",
+          "label": "Cairnib",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0004",
+      "label": "Kettli",
+      "origin": "objectborn",
+      "aspects": [
+        "ember",
+        "tide"
+      ],
+      "rarity": "uncommon",
+      "role": "ranged_magic",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "any",
+      "visual_brief": "walking teapot with curled spout, steam and little ceramic feet",
+      "signature_concept": "Steam Whistle",
+      "role_tradeoff": "Steam burst; recovery between casts",
+      "capabilities": [
+        "extinguish"
+      ],
+      "legacy_alias": "kettli",
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0004_f1",
+          "label": "Kettli",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0005",
+      "label": "Broomble",
+      "origin": "objectborn",
+      "aspects": [
+        "gale"
+      ],
+      "rarity": "common",
+      "role": "controller",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "day",
+      "visual_brief": "animated broom with splayed bristles and a bent wooden handle",
+      "signature_concept": "Cross Sweep",
+      "role_tradeoff": "Pushes enemies out of position; low damage",
+      "capabilities": [
+        "clear_mist"
+      ],
+      "legacy_alias": "broomble",
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0005_f1",
+          "label": "Broomble",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0006",
+      "label": "Crumbula",
+      "origin": "taleborn",
+      "aspects": [
+        "veil"
+      ],
+      "rarity": "uncommon",
+      "role": "melee_physical",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "night",
+      "visual_brief": "vampire toast with tiny crust cape and jam mouth",
+      "signature_concept": "Crust Bite",
+      "role_tradeoff": "Conditional self-sustain; must stay near target",
+      "capabilities": [],
+      "legacy_alias": "crumbula",
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0006_f1",
+          "label": "Crumbula",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0007",
+      "label": "Leaf fox",
+      "origin": "wildborn",
+      "aspects": [
+        "grove"
+      ],
+      "rarity": "common",
+      "role": "support",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "day",
+      "visual_brief": "leaf-eared fox with a split fern tail and short legs",
+      "signature_concept": "Fern Shelter",
+      "role_tradeoff": "Small healing field; weak direct damage",
+      "capabilities": [],
+      "legacy_alias": "sproutail",
+      "name_status": "review_required",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0007_f1",
+          "label": "Leaf fox",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0008",
+      "label": "Dewmello",
+      "origin": "wildborn",
+      "aspects": [
+        "tide",
+        "grove"
+      ],
+      "rarity": "common",
+      "role": "support",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "rain",
+      "visual_brief": "pink strawberry pudding creature with translucent jelly skirt and seed freckles",
+      "signature_concept": "Dew Parcel",
+      "role_tradeoff": "Drops a restorative puddle; weak burst",
+      "capabilities": [
+        "extinguish"
+      ],
+      "legacy_alias": "slimeberry",
+      "name_status": "review_required",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0008_f1",
+          "label": "Dewmello",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0009",
+      "label": "Mothimble",
+      "origin": "wildborn",
+      "aspects": [
+        "lumen"
+      ],
+      "rarity": "common",
+      "role": "ranged_magic",
+      "phase": "early",
+      "habitat": "frontier_meadow",
+      "condition": "night",
+      "visual_brief": "small moth with lanternlike folded wings and thread antennae",
+      "signature_concept": "Lantern Flick",
+      "role_tradeoff": "Short light pulses; fragile",
+      "capabilities": [
+        "illuminate"
+      ],
+      "legacy_alias": null,
+      "name_status": "review_required",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0009_f1",
+          "label": "Mothimble",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0010",
+      "label": "Clinkrill",
+      "origin": "wildborn",
+      "aspects": [
+        "alloy",
+        "spark"
+      ],
+      "rarity": "uncommon",
+      "role": "melee_physical",
+      "phase": "early",
+      "habitat": "riverbank",
+      "condition": "any",
+      "visual_brief": "tiny metallic shrimp whose claws resemble hinged tuning forks",
+      "signature_concept": "Claw Circuit",
+      "role_tradeoff": "Short chained physical strikes; low reach",
+      "capabilities": [
+        "power_relic"
+      ],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0010_f1",
+          "label": "Clinkrill",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0011",
+      "label": "Siltleap",
+      "origin": "wildborn",
+      "aspects": [
+        "tide",
+        "stone"
+      ],
+      "rarity": "common",
+      "role": "tank",
+      "phase": "early",
+      "habitat": "riverbank",
+      "condition": "rain",
+      "visual_brief": "mudskipper with terraced clay fins, flat belly and bubble toes",
+      "signature_concept": "Mud Rampart",
+      "role_tradeoff": "Brief defensive posture; slow on land",
+      "capabilities": [
+        "extinguish"
+      ],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0011_f1",
+          "label": "Siltleap",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0012",
+      "label": "Bellobble",
+      "origin": "objectborn",
+      "aspects": [
+        "echo"
+      ],
+      "rarity": "common",
+      "role": "controller",
+      "phase": "early",
+      "habitat": "riverbank",
+      "condition": "any",
+      "visual_brief": "bell creature on three springy feet with a swinging tongue",
+      "signature_concept": "Bell Stumble",
+      "role_tradeoff": "Timed pulse interrupts normal foes; low damage",
+      "capabilities": [],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0012_f1",
+          "label": "Bellobble",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0013",
+      "label": "Tinknook",
+      "origin": "relicborn",
+      "aspects": [
+        "spark",
+        "alloy"
+      ],
+      "rarity": "uncommon",
+      "role": "support",
+      "phase": "early",
+      "habitat": "riverbank",
+      "condition": "any",
+      "visual_brief": "ancient repair beetle with segmented brass tool arms",
+      "signature_concept": "Patch Spark",
+      "role_tradeoff": "Temporary shield; vulnerable while repairing",
+      "capabilities": [
+        "power_relic"
+      ],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0013_f1",
+          "label": "Tinknook",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0014",
+      "label": "Thimblune",
+      "origin": "dreamborn",
+      "aspects": [
+        "veil",
+        "lumen"
+      ],
+      "rarity": "uncommon",
+      "role": "controller",
+      "phase": "early",
+      "habitat": "riverbank",
+      "condition": "night",
+      "visual_brief": "floating thimble lantern with a trailing ribbon shadow",
+      "signature_concept": "Veil Stitch",
+      "role_tradeoff": "Brief silence field; long recovery",
+      "capabilities": [
+        "illuminate"
+      ],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0014_f1",
+          "label": "Thimblune",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0015",
+      "label": "Frost shuttle",
+      "origin": "objectborn",
+      "aspects": [
+        "frost",
+        "echo"
+      ],
+      "rarity": "uncommon",
+      "role": "controller",
+      "phase": "later",
+      "habitat": "frostwood",
+      "condition": "any",
+      "visual_brief": "loom shuttle with ice-thread spool, gliding on a zigzag path",
+      "signature_concept": "Rime Thread",
+      "role_tradeoff": "Brief root; needs positioning",
+      "capabilities": [
+        "freeze_marked_water"
+      ],
+      "legacy_alias": null,
+      "name_status": "internal_descriptor",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0015_f1",
+          "label": "Frost shuttle",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0016",
+      "label": "Vellumurk",
+      "origin": "taleborn",
+      "aspects": [
+        "veil",
+        "grove"
+      ],
+      "rarity": "uncommon",
+      "role": "support",
+      "phase": "later",
+      "habitat": "frostwood",
+      "condition": "night",
+      "visual_brief": "folded paper animal with leaf ink flowing between pages",
+      "signature_concept": "Margin Mend",
+      "role_tradeoff": "Restorative ink field; weak defense",
+      "capabilities": [],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0016_f1",
+          "label": "Vellumurk",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0017",
+      "label": "Glimbract",
+      "origin": "wildborn",
+      "aspects": [
+        "frost",
+        "lumen"
+      ],
+      "rarity": "rare",
+      "role": "ranged_magic",
+      "phase": "later",
+      "habitat": "frostwood",
+      "condition": "snow",
+      "visual_brief": "glass-bracted alpine flower on four root legs",
+      "signature_concept": "Prism Bloom",
+      "role_tradeoff": "Delayed ranged burst; vulnerable to interrupts",
+      "capabilities": [
+        "freeze_marked_water"
+      ],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0017_f1",
+          "label": "Glimbract",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0018",
+      "label": "Reed barge",
+      "origin": "wildborn",
+      "aspects": [
+        "tide"
+      ],
+      "rarity": "uncommon",
+      "role": "tank",
+      "phase": "later",
+      "habitat": "marsh",
+      "condition": "any",
+      "visual_brief": "wide reed-shell amphibian with floating garden on its back",
+      "signature_concept": "Reed Bastion",
+      "role_tradeoff": "Broad protection; low damage",
+      "capabilities": [
+        "extinguish"
+      ],
+      "legacy_alias": null,
+      "name_status": "internal_descriptor",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0018_f1",
+          "label": "Reed barge",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0019",
+      "label": "Orrivault",
+      "origin": "relicborn",
+      "aspects": [
+        "alloy",
+        "aether"
+      ],
+      "rarity": "rare",
+      "role": "tank",
+      "phase": "later",
+      "habitat": "relic_ruins",
+      "condition": "any",
+      "visual_brief": "walking safe with offset orbital lock and four short mechanical legs",
+      "signature_concept": "Vault Fold",
+      "role_tradeoff": "Brief shield, slow repositioning",
+      "capabilities": [],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0019_f1",
+          "label": "Orrivault",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0020",
+      "label": "Skyravel",
+      "origin": "dreamborn",
+      "aspects": [
+        "gale",
+        "aether"
+      ],
+      "rarity": "rare",
+      "role": "ranged_magic",
+      "phase": "later",
+      "habitat": "relic_ruins",
+      "condition": "wind",
+      "visual_brief": "woven ribbon manta with floating knots and hollow center",
+      "signature_concept": "Knot Current",
+      "role_tradeoff": "Ranged arc and reposition; fragile",
+      "capabilities": [
+        "clear_mist"
+      ],
+      "legacy_alias": null,
+      "name_status": "review_required",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0020_f1",
+          "label": "Skyravel",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "eligible_ko_bond_candidate"
+    },
+    {
+      "id": "kin_0021",
+      "label": "Vespernacre",
+      "origin": "wildborn",
+      "aspects": [
+        "tide",
+        "echo"
+      ],
+      "rarity": "rare",
+      "role": "support",
+      "phase": "unique",
+      "habitat": "marsh",
+      "condition": "night",
+      "visual_brief": "spiral nacre shell suspended over a cluster of soft ribbon fins",
+      "signature_concept": "Pearl Refrain",
+      "role_tradeoff": "Timed healing waves; limited offense",
+      "capabilities": [],
+      "legacy_alias": null,
+      "name_status": "provisional",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0021_f1",
+          "label": "Vespernacre",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "repeatable_special_encounter_candidate"
+    },
+    {
+      "id": "kin_0022",
+      "label": "Mirror heron",
+      "origin": "taleborn",
+      "aspects": [
+        "veil",
+        "frost"
+      ],
+      "rarity": "rare",
+      "role": "controller",
+      "phase": "unique",
+      "habitat": "frostwood",
+      "condition": "night",
+      "visual_brief": "tall mirrored paper heron with folding legs and frost-edged wings",
+      "signature_concept": "Still Reflection",
+      "role_tradeoff": "Short root with telegraph; low sustain",
+      "capabilities": [
+        "freeze_marked_water"
+      ],
+      "legacy_alias": null,
+      "name_status": "internal_descriptor",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0022_f1",
+          "label": "Mirror heron",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "repeatable_special_encounter_candidate"
+    },
+    {
+      "id": "kin_0023",
+      "label": "Walking observatory",
+      "origin": "primordial",
+      "aspects": [
+        "aether",
+        "lumen"
+      ],
+      "rarity": "legendary",
+      "role": "ranged_magic",
+      "phase": "legendary",
+      "habitat": "relic_ruins",
+      "condition": "story",
+      "visual_brief": "huge moving stone observatory with suspended star lens, asymmetric tripod silhouette",
+      "signature_concept": "Star Aperture",
+      "role_tradeoff": "Deliberate ranged burst; slow windup",
+      "capabilities": [
+        "illuminate"
+      ],
+      "legacy_alias": null,
+      "name_status": "internal_descriptor",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0023_f1",
+          "label": "Walking observatory",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "story_encounter_recruitment_rules_pending"
+    },
+    {
+      "id": "kin_0024",
+      "label": "Tide archive",
+      "origin": "primordial",
+      "aspects": [
+        "tide",
+        "stone"
+      ],
+      "rarity": "legendary",
+      "role": "tank",
+      "phase": "legendary",
+      "habitat": "marsh",
+      "condition": "story",
+      "visual_brief": "ancient walking reef with layered tablet shelves and flowing water channels",
+      "signature_concept": "Archive Surge",
+      "role_tradeoff": "Directional guard and knockback; slow attacks",
+      "capabilities": [],
+      "legacy_alias": null,
+      "name_status": "internal_descriptor",
+      "art_status": "concept_pending",
+      "forms": [
+        {
+          "id": "kin_0024_f1",
+          "label": "Tide archive",
+          "stage": 1,
+          "ascension_level": null
+        }
+      ],
+      "skill_ids": [],
+      "acquisition": "story_encounter_recruitment_rules_pending"
+    }
+  ]
+}
