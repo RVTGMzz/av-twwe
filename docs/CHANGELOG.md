@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 021 — Trainer V3 viewer (2026-11-26)
+- New offline viewer `tools/asset-pipeline/viewer_v3/` for the approved V3 layers, idle and walk: direction, speed, background, pivot, covered-area toggle, per-layer outfit test. Tested in a browser, no console errors.
+
 ## Checkpoint 020 — Transparent leg gaps (2026-11-26)
 - carve_gaps.py: the enclosed board background between the legs is now transparent in the approved sprites and walk frames (693 px); labels, covered-area sources, layers, idle and walk rebuilt; all checks pass.
 

@@ -10,6 +10,7 @@ Active task: **ART-003-G04 — Trainer Animation (GATE 04)**, docs/tasks/ART-003
 - Rebuilt layer outputs are in `layers_v3/`, `anim_v3/{idle,walk}/` and `metadata/`. Before/after images, frame sheets, logs and changed asset paths are local to `build/codex-gaps/`.
 - Claude Code reviewed the result (before/after `assets/concepts/trainer-gate02/gap_fix_m_n_se_before_after.png`), re-ran every check (all pass) and committed. Owner review of the cleanup is pending.
 - 2026-11-26: the owner saw colour still filling the space between the legs. `carve_gaps.py` made those enclosed gaps transparent (693 px over sprites and walk, both genders); labels and full_src updated; all checks pass (112/112 TECH-PASS, split 16/16, verify-full 0, walk 96/96, f0 equal). Before/after: `assets/concepts/trainer-gate02/carve_fix_m_n_s_se_4x.png`.
+- Trainer V3 viewer: open `tools/asset-pipeline/viewer_v3/index.html` (offline). It composites the committed layer/idle/walk atlases; regenerate its data with `python tools/asset-pipeline/build_viewer_v3.py` after any atlas change. The old `viewer/` only shows the rejected prototype.
 - Tooling decision pending (owner asked 2026-11-26 whether to keep using Codex for sprite drawing; it is expensive and error-prone). Claude recommends a pixel-art–specific tool (e.g. PixelLab) or a hired pixel artist for frames, with Claude Code/Codex limited to import, QA, layers and packing. Walk covered-area layers are tracked separately.
 
 ## Update 2026-11-25 — Trainer Master V3 final reference (GATE 02 active)
