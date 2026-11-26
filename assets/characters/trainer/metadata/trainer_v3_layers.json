@@ -286,7 +286,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/backpack.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 3004
+   "bytes": 3278
   },
   {
    "id": "trainer.v3.male.shoes",

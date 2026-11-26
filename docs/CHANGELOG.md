@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 015 — Male side-view backpack (2026-11-26)
+- Added the missing bedroll backpack to the male W/E direction sprites and labels; layers re-split; 16/16 TECH-PASS, pixel-exact, verify-full 0 problems.
+
 ## Checkpoint 014 — GATE 03 phase 2 covered-area layers (2026-11-26)
 - separate_layers.py export-full/verify-full; Codex painted the covered areas for base_body, hair, top and bottom (38,337 px), with 0 verification problems and the approved composite unchanged. Skin-swap test previews added. Pending owner review.
 

@@ -56,3 +56,6 @@ Final visual QA lineup: `build/codex-g02/female_final_8x.png`.
 
 ## Halo clean-up (Claude Code, 2026-11-26)
 The owner reported white specks on the male sprites. Light grey edge pixels left over from the board background were recoloured to the nearest existing dark palette colour with `python tools/asset-pipeline/clean_halo.py --apply` (163 pixels in total, 155 of them on the male set). No other pixels were changed; the palettes did not grow. A second pass finds 0 halo pixels, and the technical check is 16/16 PASS. Before/after: `halo_fix_m_se_before_after_5x.png`.
+
+## Male side-view backpack (Codex gpt-6.2-sol, 2026-11-26)
+The owner reported that the backpack disappeared when the male turns left or right; this was inherited from the concept board. Codex added the same bedroll pack behind his back in `trainer_m_w` (+159 px) and `trainer_m_e` (+164 px), matching NW/N/NE. New pixels were placed only where the sprite was transparent and use existing colours; label maps were updated (index 11). Checks: 16/16 TECH-PASS, split 16/16 pixel-exact, verify-full 0 problems. Preview: `backpack_side_fix_4x.png`.
