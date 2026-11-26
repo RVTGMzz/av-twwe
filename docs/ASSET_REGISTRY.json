@@ -148,6 +148,16 @@
       "metadata": "assets/characters/trainer/metadata/trainer_v3_anim_idle.json",
       "task": "ART-003-G04",
       "notes": "4-frame waist-squash idle for all layers (incl. *_full), 8 directions, both genders; built by animate.py, no redrawing."
+    },
+    {
+      "id": "trainer.v3.anim.walk",
+      "path": "assets/characters/trainer/anim_v3/walk/",
+      "storage_status": "in_repo",
+      "review_status": "owner_approved_motion_layers_pending_review",
+      "format": "webp_lossless",
+      "metadata": "assets/characters/trainer/metadata/trainer_v3_anim_walk.json",
+      "task": "ART-003-G04",
+      "notes": "6-frame walk, 8 directions, both genders, visible-pixel layers from corrected walk labels (assets/characters/trainer/labels/walk/); 96/96 pixel-exact, 96/96 TECH-PASS halo 0; flicker cleanup 111 px. Covered-area (*_full) layers per walk frame not done yet."
     }
   ]
 }

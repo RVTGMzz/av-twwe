@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 019 — Walk layers and flicker QA (2026-11-26)
+- Walk label maps (96) corrected, walk split into 22 lossless layer atlases with metadata (96/96 pixel-exact). check_flicker.py added; 111 blinking specks removed; flicker QA made mandatory in art-pipeline.md and AGENTS.md.
+
 ## Checkpoint 018 — Walk 16 directions (2026-11-26)
 - Male and female 6-frame walk cycles in 8 directions (96 frames), built on the approved sprites; 96/96 TECH-PASS, halo 0. Pending owner review; layer split comes next.
 

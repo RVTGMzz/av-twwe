@@ -5,7 +5,7 @@ idle: 4-frame breathing loop made WITHOUT redrawing: in every layer the pixels a
       layers, so the modular layers stay aligned and any outfit combination animates identically.
       The waist line per direction comes from the label maps (top of the belt/accessories label).
 
-Usage (repo root): python tools/asset-pipeline/animate.py idle
+Usage (repo root): python tools/asset-pipeline/animate.py idle | walk-label [--force] | walk-split
 Outputs: assets/characters/trainer/anim_v3/idle/{gender}/{slot}.webp  (rows = directions S..SE, columns = frames)
          assets/characters/trainer/metadata/trainer_v3_anim_idle.json
          build/asset-pipeline/qa/gate04/idle_*.gif / idle_preview_4x.png
@@ -99,7 +99,138 @@ def cmd_idle():
     print('idle built: %d variants; previews in build/asset-pipeline/qa/gate04/' % len(meta['variants']))
 
 
+# ------------------------------------------------------------------ walk: labels + split
+WALK_SRC = os.path.join(ROOT, 'assets', 'characters', 'trainer', 'anim_src', 'walk')
+WALK_LABELS = os.path.join(SL.LABEL_DIR, 'walk')
+WALK_OUT = 'assets/characters/trainer/anim_v3/walk'
+WALK_META = 'assets/characters/trainer/metadata/trainer_v3_anim_walk.json'
+WALK_MS = [130, 100, 110, 130, 100, 110]
+
+
+def propagate(frame, ref_sprite, ref_lab, radius=8):
+    """First-pass labels for a walk frame: each pixel takes the label of the nearest same-colour pixel in f0
+    (most parts only move); the rest take the dominant label of their labelled neighbours."""
+    fp, rp = frame.load(), ref_sprite.load()
+    by_colour = {}
+    for y in range(CANVAS[1]):
+        for x in range(CANVAS[0]):
+            c = rp[x, y]
+            if c[3]:
+                by_colour.setdefault(c, []).append((x, y))
+    lab = [[0] * CANVAS[0] for _ in range(CANVAS[1])]
+    todo = []
+    for y in range(CANVAS[1]):
+        for x in range(CANVAS[0]):
+            c = fp[x, y]
+            if not c[3]:
+                continue
+            best, bd = None, radius * radius + 1
+            for (u, v) in by_colour.get(c, ()):
+                dd = (u - x) ** 2 + (v - y) ** 2
+                if dd < bd:
+                    best, bd = (u, v), dd
+            if best:
+                lab[y][x] = ref_lab[best[1]][best[0]]
+            else:
+                todo.append((x, y))
+    for _ in range(12):
+        left = []
+        for (x, y) in todo:
+            cnt = {}
+            for yy in range(y - 1, y + 2):
+                for xx in range(x - 1, x + 2):
+                    if 0 <= xx < CANVAS[0] and 0 <= yy < CANVAS[1] and lab[yy][xx]:
+                        cnt[lab[yy][xx]] = cnt.get(lab[yy][xx], 0) + 1
+            if cnt:
+                lab[y][x] = max(cnt, key=cnt.get)
+            else:
+                left.append((x, y))
+        todo = left
+        if not todo:
+            break
+    for (x, y) in todo:
+        lab[y][x] = SL.SLOT_INDEX['base_body']
+    return lab
+
+
+def cmd_walk_label(force):
+    n = 0
+    for g, gname in SL.GENDERS.items():
+        for d in SL.DIRS:
+            ref = Image.open(os.path.join(SL.SRC, 'trainer_%s_%s_64x96.png' % (g, d))).convert('RGBA')
+            ref_lab = SL.read_labels(os.path.join(SL.LABEL_DIR, 'trainer_%s_%s_labels.png' % (g, d)))
+            for f in range(6):
+                out = os.path.join(WALK_LABELS, gname, '%s_f%d_labels.png' % (d, f))
+                if os.path.exists(out) and not force:
+                    continue
+                os.makedirs(os.path.dirname(out), exist_ok=True)
+                frame = Image.open(os.path.join(WALK_SRC, gname, '%s_f%d.png' % (d, f))).convert('RGBA')
+                lab = ref_lab if f == 0 else propagate(frame, ref, ref_lab)
+                SL.palette_image(lab).save(out, transparency=0)
+                n += 1
+    print('walk label maps written:', n)
+
+
+def cmd_walk_split():
+    os.makedirs(QA, exist_ok=True)
+    slots = [s for s, _ in SL.LABELS if s]
+    meta = {'schema_version': 1, 'id': 'trainer.v3.anim.walk', 'task': 'ART-003-G04', 'status': 'visible_pixel_layers_pending_review',
+            'canvas': {'w': CANVAS[0], 'h': CANVAS[1]}, 'pivot': {'x': SL.PIVOT[0], 'y': SL.PIVOT[1]}, 'directions': SL.DIR_IDS,
+            'frame_count': 6, 'durations_ms': WALK_MS, 'loop': True,
+            'render_order': {d: SL.RENDER_ORDER[SL.DIR_GROUP[d]] for d in SL.DIR_IDS},
+            'layout': 'row = direction (S,SW,W,NW,N,NE,E,SE), column = frame', 'variants': []}
+    exact = {}
+    for g, gname in SL.GENDERS.items():
+        atl = {s: Image.new('RGBA', (CANVAS[0] * 6, CANVAS[1] * 8)) for s in slots}
+        over = Image.new('RGBA', (CANVAS[0] * 12, CANVAS[1] * 8), (40, 40, 48, 255))
+        for i, d in enumerate(SL.DIRS):
+            order = SL.RENDER_ORDER[SL.DIR_GROUP[d.upper()]]
+            for f in range(6):
+                spr = Image.open(os.path.join(WALK_SRC, gname, '%s_f%d.png' % (d, f))).convert('RGBA')
+                lab = SL.read_labels(os.path.join(WALK_LABELS, gname, '%s_f%d_labels.png' % (d, f)))
+                sp = spr.load()
+                layers = {s: Image.new('RGBA', CANVAS) for s in slots}
+                missing = 0
+                for y in range(CANVAS[1]):
+                    for x in range(CANVAS[0]):
+                        c = sp[x, y]
+                        if not c[3]:
+                            continue
+                        k = lab[y][x]
+                        if not k:
+                            missing += 1
+                            k = SL.SLOT_INDEX['base_body']
+                        layers[SL.LABELS[k][0]].putpixel((x, y), c)
+                comp = Image.new('RGBA', CANVAS)
+                for s in order:
+                    if s in layers:
+                        comp.alpha_composite(layers[s])
+                exact['%s_%s_f%d' % (gname, d, f)] = comp.tobytes() == spr.tobytes() and missing == 0
+                for s in slots:
+                    atl[s].alpha_composite(layers[s], (f * CANVAS[0], i * CANVAS[1]))
+                dbg = SL.palette_image(lab).convert('RGBA')
+                dbg.putalpha(spr.getchannel('A'))
+                over.alpha_composite(spr, (f * 2 * CANVAS[0], i * CANVAS[1]))
+                over.alpha_composite(dbg, ((f * 2 + 1) * CANVAS[0], i * CANVAS[1]))
+        for s in slots:
+            if not any(atl[s].getchannel('A').getdata()):
+                continue
+            rel = '%s/%s/%s.webp' % (WALK_OUT, gname, s)
+            os.makedirs(os.path.dirname(os.path.join(ROOT, rel)), exist_ok=True)
+            atl[s].save(os.path.join(ROOT, rel), 'WEBP', lossless=True, quality=100, method=6, exact=True)
+            ok = Image.open(os.path.join(ROOT, rel)).convert('RGBA').tobytes() == atl[s].tobytes()
+            meta['variants'].append({'id': 'trainer.v3.%s.%s.walk' % (gname, s), 'slot': s, 'presets': [gname],
+                                     'file': rel, 'lossless_roundtrip_exact': ok})
+        over.save(os.path.join(QA, 'walk_labels_%s.png' % gname))
+    json.dump(meta, open(os.path.join(ROOT, WALK_META), 'w'), indent=1)
+    n = sum(exact.values())
+    print('walk split: pixel-exact %d/%d; variants %d; overlays build/asset-pipeline/qa/gate04/walk_labels_*.png'
+          % (n, len(exact), len(meta['variants'])))
+    sys.exit(0 if n == len(exact) and all(v['lossless_roundtrip_exact'] for v in meta['variants']) else 1)
+
+
 if __name__ == '__main__':
-    if len(sys.argv) < 2 or sys.argv[1] != 'idle':
+    cmds = {'idle': cmd_idle, 'walk-label': lambda: cmd_walk_label('--force' in sys.argv), 'walk-split': cmd_walk_split}
+    if len(sys.argv) < 2 or sys.argv[1] not in cmds:
         sys.exit(__doc__)
-    cmd_idle()
+    cmds[sys.argv[1]]()

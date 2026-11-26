@@ -1,0 +1,378 @@
+{
+ "schema_version": 1,
+ "id": "trainer.v3.anim.walk",
+ "task": "ART-003-G04",
+ "status": "visible_pixel_layers_pending_review",
+ "canvas": {
+  "w": 64,
+  "h": 96
+ },
+ "pivot": {
+  "x": 32,
+  "y": 94
+ },
+ "directions": [
+  "S",
+  "SW",
+  "W",
+  "NW",
+  "N",
+  "NE",
+  "E",
+  "SE"
+ ],
+ "frame_count": 6,
+ "durations_ms": [
+  130,
+  100,
+  110,
+  130,
+  100,
+  110
+ ],
+ "loop": true,
+ "render_order": {
+  "S": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "SW": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "W": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "NW": [
+   "shadow",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "backpack",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "N": [
+   "shadow",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "backpack",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "NE": [
+   "shadow",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "backpack",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "E": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "SE": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ]
+ },
+ "layout": "row = direction (S,SW,W,NW,N,NE,E,SE), column = frame",
+ "variants": [
+  {
+   "id": "trainer.v3.male.base_body.walk",
+   "slot": "base_body",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/base_body.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.face.walk",
+   "slot": "face",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/face.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.hair.walk",
+   "slot": "hair",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/hair.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.headwear.walk",
+   "slot": "headwear",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/headwear.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.scarf.walk",
+   "slot": "scarf",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/scarf.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.top.walk",
+   "slot": "top",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/top.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.bottom.walk",
+   "slot": "bottom",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/bottom.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.gloves.walk",
+   "slot": "gloves",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/gloves.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.accessories.walk",
+   "slot": "accessories",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/accessories.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.backpack.walk",
+   "slot": "backpack",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/backpack.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.male.shoes.walk",
+   "slot": "shoes",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/male/shoes.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.base_body.walk",
+   "slot": "base_body",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/base_body.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.face.walk",
+   "slot": "face",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/face.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.hair.walk",
+   "slot": "hair",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/hair.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.hair_ribbon.walk",
+   "slot": "hair_ribbon",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/hair_ribbon.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.headwear.walk",
+   "slot": "headwear",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/headwear.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.scarf.walk",
+   "slot": "scarf",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/scarf.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.top.walk",
+   "slot": "top",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/top.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.bottom.walk",
+   "slot": "bottom",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/bottom.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.gloves.walk",
+   "slot": "gloves",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/gloves.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.accessories.walk",
+   "slot": "accessories",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/accessories.webp",
+   "lossless_roundtrip_exact": true
+  },
+  {
+   "id": "trainer.v3.female.shoes.walk",
+   "slot": "shoes",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/anim_v3/walk/female/shoes.webp",
+   "lossless_roundtrip_exact": true
+  }
+ ]
+}

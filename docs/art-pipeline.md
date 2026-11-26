@@ -17,3 +17,9 @@ Sprites cut from a concept board or generated on a light background keep light p
 3. **Re-verify:** run check_master again (`halo 0`). For modular sprites, then run `separate_layers.py split` (16/16 pixel-exact), `separate_layers.py verify-full` (0 problems) and `animate.py idle`.
 4. **Look:** review every sprite on a DARK background at 4x (the check_master review sheet is dark for this reason), not only on mid-grey or green.
 5. Every new sprite, animation frame or import (Codex, ChatGPT or artist) must pass steps 1–4 before commit or before being shown to the owner as done.
+
+## Animation flicker QA (mandatory for every animation, owner report 2026-11-26)
+A bright pixel that appears in only some frames reads as a blinking white dot in motion, even if each frame passes the halo check (owner report: male SW walk).
+1. `python tools/asset-pipeline/check_flicker.py <anim_src folder>` lists bright isolated pixels in frames N>0 that do not exist within 2 px in frame 0, and writes magenta-marked sheets on a dark background to `build/asset-pipeline/qa/flicker/`.
+2. Review every candidate. Legitimate cases (skin that follows the legs, highlights moving with a sleeve or boot) are kept and listed with reasons. Real specks are recoloured to their cluster colour without changing position or alpha, so label maps stay valid.
+3. Play the GIF on a dark background before showing it as done. check_master (halo 0) still applies to every frame.
