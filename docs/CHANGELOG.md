@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Checkpoint 012 — GATE 03 phase 1 layers (2026-11-26)
+- 16 corrected label maps (Codex gpt-6.2-sol); 22 visible-pixel layer atlases with metadata; 16/16 pixel-exact recombination, lossless. Pending owner review.
+
 ## Checkpoint 011 — GATE 02 approved, GATE 03 tooling (2026-11-25)
 - Owner approved the GATE 02 direction sprites (D019). Added separate_layers.py (label maps, split, pixel-exact recombination, lossless layer atlases, metadata) and first-pass label maps; label correction is assigned to Codex (ART-003-G03).
 

@@ -118,6 +118,26 @@
       ],
       "task": "ART-003-G02",
       "notes": "Male: Codex clean-up of the approved draft. Female: round 4 whole-sprite regeneration by Codex (no patching) after owner rejected overlapping pieces. 16/16 TECH-PASS. Ponytail on her right side in all 8; no doubled parts. Female NE regenerated in round 5 to match NW/N style. No known visual defects per Claude review; owner approved (D019)."
+    },
+    {
+      "id": "trainer.v3.labels",
+      "path": "assets/characters/trainer/labels/",
+      "storage_status": "in_repo",
+      "review_status": "codex_corrected_pending_owner_review",
+      "count": 16,
+      "task": "ART-003-G03",
+      "notes": "Editable source of truth for separation (indexed PNG, 12 layer labels). Corrected by Codex gpt-6.2-sol, reviewed by Claude Code."
+    },
+    {
+      "id": "trainer.v3.layers",
+      "path": "assets/characters/trainer/layers_v3/",
+      "storage_status": "in_repo",
+      "review_status": "pending_owner_review",
+      "format": "webp_lossless",
+      "count": 22,
+      "metadata": "assets/characters/trainer/metadata/trainer_v3_layers.json",
+      "task": "ART-003-G03",
+      "notes": "Visible-pixel layers, 8-direction atlases per gender and slot. 16/16 pixel-exact recombination, all lossless round trips exact. Covered areas are not painted yet (phase 2)."
     }
   ]
 }

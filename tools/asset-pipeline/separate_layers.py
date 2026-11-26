@@ -237,7 +237,7 @@ def cmd_split():
         for s in slots:
             if not any(atl[s].getchannel('A').getdata()):
                 continue
-            rel = '%s/%s/trainer_v3_%s_%s.png' % (OUT_LAYERS, gname, gname, s)
+            rel = '%s/%s/%s.png' % (OUT_LAYERS, gname, s)  # short names: Windows path limits
             png = os.path.join(ROOT, 'build', 'asset-pipeline', 'png', rel)
             os.makedirs(os.path.dirname(png), exist_ok=True)
             atl[s].save(png)

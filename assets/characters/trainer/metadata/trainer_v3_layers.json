@@ -1,0 +1,446 @@
+{
+ "schema_version": 1,
+ "id": "trainer.v3.layers",
+ "task": "ART-003-G03",
+ "status": "visible_pixel_layers_pending_review",
+ "source_sprites": "assets/concepts/trainer-gate02 (owner approved D019)",
+ "canvas": {
+  "w": 64,
+  "h": 96
+ },
+ "pivot": {
+  "x": 32,
+  "y": 94,
+  "meaning": "feet ground contact"
+ },
+ "directions": [
+  "S",
+  "SW",
+  "W",
+  "NW",
+  "N",
+  "NE",
+  "E",
+  "SE"
+ ],
+ "mirror_policy": {
+  "mode": "native_all_8",
+  "mirror_safe": false
+ },
+ "animation": "idle frame 0 only (GATE 04 adds animations)",
+ "slots": [
+  "base_body",
+  "face",
+  "hair",
+  "hair_ribbon",
+  "headwear",
+  "scarf",
+  "top",
+  "bottom",
+  "gloves",
+  "accessories",
+  "backpack",
+  "shoes"
+ ],
+ "render_order": {
+  "S": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "SW": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "W": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "NW": [
+   "shadow",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "backpack",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "N": [
+   "shadow",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "backpack",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "NE": [
+   "shadow",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "backpack",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "E": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ],
+  "SE": [
+   "shadow",
+   "backpack",
+   "hair_back",
+   "base_body",
+   "face",
+   "bottom",
+   "shoes",
+   "top",
+   "gloves",
+   "accessories",
+   "scarf",
+   "hair",
+   "hair_ribbon",
+   "headwear",
+   "held_item",
+   "effects"
+  ]
+ },
+ "label_maps": "assets/characters/trainer/labels/trainer_{g}_{dir}_labels.png",
+ "limitation": "Visible-pixel layers: exact recombination, but covered areas are empty until painted (ART-003-G03).",
+ "variants": [
+  {
+   "id": "trainer.v3.male.base_body",
+   "slot": "base_body",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/base_body.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2536
+  },
+  {
+   "id": "trainer.v3.male.face",
+   "slot": "face",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/face.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 672
+  },
+  {
+   "id": "trainer.v3.male.hair",
+   "slot": "hair",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/hair.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 6308
+  },
+  {
+   "id": "trainer.v3.male.headwear",
+   "slot": "headwear",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/headwear.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2722
+  },
+  {
+   "id": "trainer.v3.male.scarf",
+   "slot": "scarf",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/scarf.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 1270
+  },
+  {
+   "id": "trainer.v3.male.top",
+   "slot": "top",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/top.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2322
+  },
+  {
+   "id": "trainer.v3.male.bottom",
+   "slot": "bottom",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/bottom.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 1110
+  },
+  {
+   "id": "trainer.v3.male.gloves",
+   "slot": "gloves",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/gloves.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 1852
+  },
+  {
+   "id": "trainer.v3.male.accessories",
+   "slot": "accessories",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/accessories.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2848
+  },
+  {
+   "id": "trainer.v3.male.backpack",
+   "slot": "backpack",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/backpack.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 3026
+  },
+  {
+   "id": "trainer.v3.male.shoes",
+   "slot": "shoes",
+   "presets": [
+    "male"
+   ],
+   "file": "assets/characters/trainer/layers_v3/male/shoes.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 3816
+  },
+  {
+   "id": "trainer.v3.female.base_body",
+   "slot": "base_body",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/base_body.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2464
+  },
+  {
+   "id": "trainer.v3.female.face",
+   "slot": "face",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/face.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 650
+  },
+  {
+   "id": "trainer.v3.female.hair",
+   "slot": "hair",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/hair.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 6742
+  },
+  {
+   "id": "trainer.v3.female.hair_ribbon",
+   "slot": "hair_ribbon",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/hair_ribbon.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 1700
+  },
+  {
+   "id": "trainer.v3.female.headwear",
+   "slot": "headwear",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/headwear.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2182
+  },
+  {
+   "id": "trainer.v3.female.scarf",
+   "slot": "scarf",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/scarf.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 1334
+  },
+  {
+   "id": "trainer.v3.female.top",
+   "slot": "top",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/top.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2846
+  },
+  {
+   "id": "trainer.v3.female.bottom",
+   "slot": "bottom",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/bottom.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2564
+  },
+  {
+   "id": "trainer.v3.female.gloves",
+   "slot": "gloves",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/gloves.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 1724
+  },
+  {
+   "id": "trainer.v3.female.accessories",
+   "slot": "accessories",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/accessories.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2348
+  },
+  {
+   "id": "trainer.v3.female.shoes",
+   "slot": "shoes",
+   "presets": [
+    "female"
+   ],
+   "file": "assets/characters/trainer/layers_v3/female/shoes.webp",
+   "lossless_roundtrip_exact": true,
+   "bytes": 2024
+  }
+ ],
+ "frames": {
+  "S": {
+   "x": 0,
+   "y": 0
+  },
+  "SW": {
+   "x": 64,
+   "y": 0
+  },
+  "W": {
+   "x": 128,
+   "y": 0
+  },
+  "NW": {
+   "x": 192,
+   "y": 0
+  },
+  "N": {
+   "x": 256,
+   "y": 0
+  },
+  "NE": {
+   "x": 320,
+   "y": 0
+  },
+  "E": {
+   "x": 384,
+   "y": 0
+  },
+  "SE": {
+   "x": 448,
+   "y": 0
+  }
+ }
+}
