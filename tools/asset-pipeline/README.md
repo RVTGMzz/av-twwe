@@ -9,6 +9,7 @@ Requirements: Node 18+ (no npm packages), Python 3.8+ with Pillow (WebP support)
 | `check_master.py` | sprite checks (canvas 48x64/64x80/64x96, transparent bg, hard alpha, ≤48 colours, stray pixels, **no white specks/halo**) + 1x/4x review sheet on a dark background | active, mandatory before commit |
 | `clean_halo.py` | detect/fix light edge specks (`--apply`), palette-safe, syncs full_src | active |
 | `check_flicker.py` | animation check: bright specks appearing only in some frames (blinking white dots), marked sheets on a dark background | active, mandatory for animations |
+| `check_gaps.py` | light background specks trapped in dark leg/boot gaps (sprites + walk frames), marked sheets | active, mandatory |
 | `separate_layers.py` | GATE 03 label maps, split, pixel-exact recombination, covered-area verify | active |
 | `animate.py` | GATE 04: idle from layers; walk-label (propagate labels from f0) and walk-split (pixel-exact layer atlases) | active |
 | `extract_board.py` | cut direction figures from an approved board | used for GATE 02 draft |

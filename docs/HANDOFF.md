@@ -1,7 +1,15 @@
 # AV-TWWE — Current handoff
 Checkpoint 005 | 2026-11-25 | Pre-production
 Active branch: **feature/modular-trainer** (read this file on that branch, not main). Last implementation commit: 8745215 (asset pipeline). Handoff/docs commit follows it; use `git log -1` + `git ls-remote origin` for the real head.
-Active task: **ART-003-G01 — Trainer Character Master (GATE 01)**, docs/tasks/ART-003-G01.md. Full owner requirements: docs/tasks/ART-003-spec.md. ART-003-B01 is ON HOLD.
+Active task: **ART-003-G04 — Trainer Animation (GATE 04)**, docs/tasks/ART-003-G04.md. Full owner requirements: docs/tasks/ART-003-spec.md. ART-003-B01 is ON HOLD.
+
+## Trainer gap cleanup for Claude Code review (2026-11-26)
+- Codex recoloured light gap pixels in approved male S/N/SE and female S sprites under `assets/concepts/trainer-gate02/` (43 px). Walk sources under `assets/characters/trainer/anim_src/walk/` changed in those directions and female NW (120 px in 23 PNGs, including 43 px in the matching f0 files). The male N patch covers the full visible streak, including clustered pixels the detector missed.
+- The existing `clean_halo.sync_layers` helper synced 9 matching pixels in `assets/characters/trainer/full_src/`. All 16 approved/f0 pairs match byte for byte. The source alpha and label-map bytes were verified. Every replacement uses a colour from the corresponding source palette.
+- `check_gaps.py` flagged 127 candidates before and 78 after. The remaining marks follow cuffs, knees, socks or garment hems. The script exits 1 whenever it lists candidates. `check_master.py` returned 112/112 TECH-PASS with halo 0. Split and verify-full returned 16/16 pixel-exact and 0 problems. Idle rebuilt 30 variants and walk-split returned 96/96 pixel-exact across 22 variants. The supplementary flicker scan dropped from 152 to 151 candidates with zero new coordinates.
+- Rebuilt layer outputs are in `layers_v3/`, `anim_v3/{idle,walk}/` and `metadata/`. Before/after images, frame sheets, logs and changed asset paths are local to `build/codex-gaps/`.
+- Claude Code reviewed the result (before/after `assets/concepts/trainer-gate02/gap_fix_m_n_se_before_after.png`), re-ran every check (all pass) and committed. Owner review of the cleanup is pending.
+- Tooling decision pending (owner asked 2026-11-26 whether to keep using Codex for sprite drawing; it is expensive and error-prone). Claude recommends a pixel-art–specific tool (e.g. PixelLab) or a hired pixel artist for frames, with Claude Code/Codex limited to import, QA, layers and packing. Walk covered-area layers are tracked separately.
 
 ## Update 2026-11-25 — Trainer Master V3 final reference (GATE 02 active)
 - Authoritative reference: `assets/concepts/trainer-master-v3.webp` = final "Character Concept & 8 Directions" board, 1536x1024, 288,542 B, SHA-256 b6fbbd9efa7d6217354b0f2f577a255be7e80c4d89bd831984c8c0d3fa58be50 (verified). Replaces all older trainer references (3-option board c4deb594… only in history at ae0636f). Option A design.

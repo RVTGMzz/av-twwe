@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "AV-TWWE",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "policy": "Repo paths are intended unless storage_status is in_repo; concept is not production.",
   "assets": [
     {
@@ -117,7 +117,7 @@
         96
       ],
       "task": "ART-003-G02",
-      "notes": "Male: Codex clean-up of the approved draft. Female: round 4 whole-sprite regeneration by Codex (no patching) after owner rejected overlapping pieces. 16/16 TECH-PASS. Ponytail on her right side in all 8; no doubled parts. Female NE regenerated in round 5 to match NW/N style. No known visual defects per Claude review; owner approved (D019)."
+      "notes": "Male: Codex clean-up of the approved draft. Female: round 4 whole-sprite regeneration by Codex (no patching) after owner rejected overlapping pieces. 16/16 TECH-PASS. Ponytail on her right side in all 8; no doubled parts. Female NE regenerated in round 5 to match NW/N style. No known visual defects per Claude review; owner approved (D019). Interior gap cleanup (43 pixels, no alpha change) is pending Claude Code review."
     },
     {
       "id": "trainer.v3.labels",
@@ -157,7 +157,7 @@
       "format": "webp_lossless",
       "metadata": "assets/characters/trainer/metadata/trainer_v3_anim_walk.json",
       "task": "ART-003-G04",
-      "notes": "6-frame walk, 8 directions, both genders, visible-pixel layers from corrected walk labels (assets/characters/trainer/labels/walk/); 96/96 pixel-exact, 96/96 TECH-PASS halo 0; flicker cleanup 111 px. Covered-area (*_full) layers per walk frame not done yet."
+      "notes": "6-frame walk, 8 directions, both genders, visible-pixel layers from corrected walk labels (assets/characters/trainer/labels/walk/); 96/96 pixel-exact, 96/96 TECH-PASS halo 0; flicker cleanup 111 px. Interior gap cleanup recoloured 120 pixels and preserved byte equality of all 16 f0 pairs. Covered-area (*_full) layers per walk frame not done yet."
     }
   ]
 }

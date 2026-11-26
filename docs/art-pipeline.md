@@ -23,3 +23,9 @@ A bright pixel that appears in only some frames reads as a blinking white dot in
 1. `python tools/asset-pipeline/check_flicker.py <anim_src folder>` lists bright isolated pixels in frames N>0 that do not exist within 2 px in frame 0, and writes magenta-marked sheets on a dark background to `build/asset-pipeline/qa/flicker/`.
 2. Review every candidate. Legitimate cases (skin that follows the legs, highlights moving with a sleeve or boot) are kept and listed with reasons. Real specks are recoloured to their cluster colour without changing position or alpha, so label maps stay valid.
 3. Play the GIF on a dark background before showing it as done. check_master (halo 0) still applies to every frame.
+
+## Gap specks (mandatory, owner report 2026-11-26)
+Light grey or cream pixels left from the concept-board background can sit INSIDE dark gaps (between the boots, legs or shorts), where neither the edge halo check nor the flicker check finds them. Example: the male SE and N boot gaps.
+1. `python tools/asset-pipeline/check_gaps.py` scans the leg/boot labels of the approved sprites and all walk frames and writes marked sheets to `build/asset-pipeline/qa/gaps/`.
+2. Review every candidate. Recolour real specks to the surrounding gap/outline colour (position and alpha unchanged; sync approved sprites with `clean_halo.sync_layers`). Keep deliberate highlights (boot cuffs, knees, hems) and record why.
+3. Re-run split, verify-full, idle and walk-split. Order of QA for any sprite or frame: check_master (halo) → check_gaps → check_flicker (animations) → dark-background visual review.

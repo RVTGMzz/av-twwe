@@ -1,4 +1,7 @@
 # AV-TWWE — Changelog
+## Trainer direction and walk gap cleanup (2026-11-26)
+- Recoloured 43 pixels in approved direction sprites and 120 in walk sources using existing palette colours. Covered-area sources were synced. Gap candidates dropped from 127 to 78 reviewed details. All 112 source images pass with halo 0, direction layers recombine 16/16, verify-full reports 0 problems, and idle and walk layers were rebuilt (walk 96/96 pixel-exact). Pending Claude Code review.
+
 ## Checkpoint 019 — Walk layers and flicker QA (2026-11-26)
 - Walk label maps (96) corrected, walk split into 22 lossless layer atlases with metadata (96/96 pixel-exact). check_flicker.py added; 111 blinking specks removed; flicker QA made mandatory in art-pipeline.md and AGENTS.md.
 

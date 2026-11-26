@@ -256,7 +256,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/bottom.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 1106
+   "bytes": 1100
   },
   {
    "id": "trainer.v3.male.gloves",
@@ -296,7 +296,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/shoes.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 3752
+   "bytes": 3720
   },
   {
    "id": "trainer.v3.female.base_body",
@@ -306,7 +306,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/female/base_body.webp",
    "lossless_roundtrip_exact": true,
-   "bytes": 2468
+   "bytes": 2452
   },
   {
    "id": "trainer.v3.female.face",
@@ -446,7 +446,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/male/bottom_full.webp",
    "completes": "trainer.v3.male.bottom",
-   "bytes": 1546
+   "bytes": 1542
   },
   {
    "id": "trainer.v3.female.base_body_full",
@@ -456,7 +456,7 @@
    ],
    "file": "assets/characters/trainer/layers_v3/female/base_body_full.webp",
    "completes": "trainer.v3.female.base_body",
-   "bytes": 4962
+   "bytes": 4956
   },
   {
    "id": "trainer.v3.female.hair_full",

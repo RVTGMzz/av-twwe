@@ -62,3 +62,6 @@ The owner reported that the backpack disappeared when the male turns left or rig
 
 ## Halo clean-up pass 2 (Claude Code, 2026-11-26)
 The owner still saw white specks. `clean_halo.py` now also catches slightly warm light edge pixels (rule A: saturation < 0.35 and lighter than the inner mean by 0.08; rule B: value > 0.62 and lighter than every inner neighbour by 0.18). 233 pixels were recoloured to existing dark outline colours, and the matching pixels in `assets/characters/trainer/full_src/` were synced. A re-run finds 0. Checks: 16/16 TECH-PASS, split 16/16 pixel-exact, verify-full 0 problems; idle rebuilt. Dark-background check: `dark_bg_check_4x.png`.
+
+## Interior gap cleanup (Codex, 2026-11-26)
+The owner reported a light vertical streak between the male SE boots. Codex used the dark-background `check_gaps.py` sheets and Python 3.8 with Pillow to recolour 43 pixels in male S (1), N (36), SE (4) and female S (2). Each RGB comes from the existing source palette and the alpha bytes match the originals. The N fix includes the full streak between the boots. The corrections were applied to matching walk frames and synced to the affected covered-area sources. All 16 direction masters returned TECH-PASS with halo 0. Local before/after images are in `build/codex-gaps/`.
